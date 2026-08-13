@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Albany Web Mockups — Free Redesign Concepts</title>
+  <style>
+    :root {
+      --bg: #0f1419;
+      --card: #1a222d;
+      --text: #e8eaed;
+      --muted: #9aa0a6;
+      --accent: #8ab4f8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      padding: 3rem 1.5rem 2rem;
+      text-align: center;
+      border-bottom: 1px solid #2a3441;
+    }
+    header h1 {
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.6rem;
+    }
+    header p {
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+    }
+    main {
+      flex: 1;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem;
+      width: 100%;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    @media (max-width: 640px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid #2a3441;
+      border-radius: 12px;
+      padding: 1.75rem;
+      transition: border-color 0.15s, transform 0.15s;
+    }
+    .card:hover {
+      border-color: #3d4f66;
+      transform: translateY(-2px);
+    }
+    .card h2 {
+      font-size: 1.25rem;
+      margin-bottom: 0.4rem;
+    }
+    .card .type {
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+    .card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.25rem;
+    }
+    .card a {
+      display: inline-block;
+      background: var(--accent);
+      color: #0f1419;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 0.55rem 1.1rem;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+    .card a:hover {
+      filter: brightness(1.1);
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+      border-top: 1px solid #2a3441;
+    }
+    footer strong { color: var(--text); }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Albany Web Mockups</h1>
+    <p>Free redesign concept mockups for real local businesses in Albany, Oregon. Design concepts only — not affiliated with the businesses shown.</p>
+  </header>
+
+  <main>
+    <div class="grid">
+      <div class="card">
+        <div class="type">Nonprofit Resale + Bridal</div>
+        <h2>1st Hand Seconds</h2>
+        <p>Upscale resale clothing boutique &amp; Chicee Chicee Bridal supporting Mercy House International in historic downtown Albany.</p>
+        <a href="./1st-hand-seconds-unique-boutique/">View Mockup →</a>
+      </div>
+
+      <div class="card">
+        <div class="type">Classic Diner · Est. 1980</div>
+        <h2>Roger's Restaurant</h2>
+        <p>Hometown comfort food diner open daily at 5 a.m. Family-run since the beginning, still serving Albany the same way.</p>
+        <a href="./rogers-restaurant/">View Mockup →</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <strong>Design concepts only.</strong><br>
+    Not official websites and not affiliated with the businesses shown.
+  </footer>
+</body>
+</html>
