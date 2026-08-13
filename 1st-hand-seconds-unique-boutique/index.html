@@ -1,29 +1,413 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>1st Hand Seconds | clothing | 411 Southwest 2nd Avenue, Albany, OR 97321, USA — redesign concept</title>
-<style>
-  body { margin:0; font-family: system-ui, -apple-system, sans-serif; color:#222; }
-  .hero { background-image:url('https://static.wixstatic.com/media/f726f5_982ba86392404e5b80f49f20689e4e24~mv2.png/v1/crop/x_0,y_837,w_2581,h_447/fill/w_2171,h_376,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/BRICK%20WALL%2040%25.png'); background-size:cover; background-position:center;
-           color:#fff; padding:6rem 2rem; text-align:center; text-shadow:0 2px 8px rgba(0,0,0,.6); }
-  .hero h1 { font-size:2.5rem; margin:0 0 .5rem; }
-  .hero p { font-size:1.2rem; opacity:.95; }
-  section { max-width:800px; margin:0 auto; padding:3rem 1.5rem; }
-  .hours { background:#f4f4f4; border-radius:8px; padding:1.5rem; text-align:center; font-size:1.1rem; }
-  footer { text-align:center; color:#888; font-size:.85rem; padding:2rem; border-top:1px solid #eee; }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>1st Hand Seconds Unique Boutique — Redesign Concept</title>
+  <meta name="description" content="Concept redesign for 1st Hand Seconds Unique Boutique & Chicee Chicee Bridal in downtown Albany, Oregon. Supporting Mercy House International.">
+  <style>
+    :root {
+      --rose: #c45c7a;
+      --rose-dark: #9e3d5c;
+      --cream: #faf7f5;
+      --ink: #2c2422;
+      --muted: #6b5e5a;
+      --soft: #f3ebe8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.6;
+    }
+
+    a { color: var(--rose-dark); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Header */
+    header {
+      background: #fff;
+      border-bottom: 1px solid #e8dfdb;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.9rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+    }
+    .logo span { color: var(--rose); }
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.95rem;
+    }
+    .nav-links a { color: var(--muted); font-weight: 500; }
+    .nav-links a:hover { color: var(--rose-dark); text-decoration: none; }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #2c2422 0%, #4a3530 100%);
+      color: #fff;
+      padding: 5.5rem 1.5rem 4.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url('https://static.wixstatic.com/media/f726f5_982ba86392404e5b80f49f20689e4e24~mv2.png/v1/crop/x_0,y_837,w_2581,h_447/fill/w_2171,h_376,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/BRICK%20WALL%2040%25.png') center/cover;
+      opacity: 0.25;
+    }
+    .hero-inner {
+      position: relative;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .hero .badge {
+      display: inline-block;
+      background: var(--rose);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      margin-bottom: 1.25rem;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.03em;
+    }
+    .hero p {
+      font-size: 1.15rem;
+      opacity: 0.9;
+      max-width: 520px;
+      margin: 0 auto 1.75rem;
+    }
+    .hero-cta {
+      display: inline-flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.15s ease;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: var(--rose);
+      color: #fff;
+    }
+    .btn-primary:hover {
+      background: var(--rose-dark);
+      text-decoration: none;
+    }
+    .btn-ghost {
+      background: transparent;
+      color: #fff;
+      border: 1.5px solid rgba(255,255,255,0.45);
+    }
+    .btn-ghost:hover {
+      background: rgba(255,255,255,0.1);
+      text-decoration: none;
+    }
+
+    /* Sections */
+    section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+    .section-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 0.5rem;
+    }
+    h2 {
+      font-size: clamp(1.6rem, 3.5vw, 2.1rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+      line-height: 1.25;
+    }
+    .lead {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 560px;
+    }
+
+    /* Mission */
+    .mission {
+      background: #fff;
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+    }
+    .mission-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    @media (max-width: 768px) {
+      .mission-grid { grid-template-columns: 1fr; gap: 2rem; }
+    }
+    .mission-card {
+      background: var(--soft);
+      border-radius: 12px;
+      padding: 1.75rem;
+    }
+    .mission-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.5rem;
+    }
+    .mission-card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    /* Two columns for boutiques */
+    .boutiques {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    @media (max-width: 700px) {
+      .boutiques { grid-template-columns: 1fr; }
+    }
+    .boutique-card {
+      background: #fff;
+      border: 1px solid #e8dfdb;
+      border-radius: 12px;
+      padding: 2rem;
+      transition: box-shadow 0.2s;
+    }
+    .boutique-card:hover {
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+    }
+    .boutique-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.6rem;
+    }
+    .boutique-card p {
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+      font-size: 0.98rem;
+    }
+    .tag {
+      display: inline-block;
+      background: var(--soft);
+      color: var(--rose-dark);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.25rem 0.65rem;
+      border-radius: 4px;
+      margin-bottom: 0.85rem;
+    }
+
+    /* Hours & Location */
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    @media (max-width: 640px) {
+      .info-grid { grid-template-columns: 1fr; }
+    }
+    .info-box {
+      background: #fff;
+      border: 1px solid #e8dfdb;
+      border-radius: 12px;
+      padding: 1.75rem;
+    }
+    .info-box h3 {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .hours-list {
+      list-style: none;
+    }
+    .hours-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.4rem 0;
+      border-bottom: 1px solid #f0eae7;
+      font-size: 0.95rem;
+    }
+    .hours-list li:last-child { border-bottom: none; }
+    .hours-list .day { color: var(--muted); }
+    .hours-list .time { font-weight: 600; }
+
+    /* CTA band */
+    .cta-band {
+      background: var(--rose);
+      color: #fff;
+      text-align: center;
+      padding: 3.5rem 1.5rem;
+    }
+    .cta-band h2 {
+      color: #fff;
+      margin-bottom: 0.75rem;
+    }
+    .cta-band p {
+      opacity: 0.92;
+      max-width: 480px;
+      margin: 0 auto 1.5rem;
+    }
+    .cta-band .btn-primary {
+      background: #fff;
+      color: var(--rose-dark);
+    }
+    .cta-band .btn-primary:hover {
+      background: var(--cream);
+    }
+
+    /* Footer */
+    footer {
+      background: #2c2422;
+      color: rgba(255,255,255,0.7);
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      font-size: 0.88rem;
+    }
+    footer strong {
+      color: #fff;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .disclaimer {
+      max-width: 620px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+  </style>
 </head>
 <body>
-  <div class="hero">
-    <h1>1st Hand Seconds | clothing | 411 Southwest 2nd Avenue, Albany, OR 97321, USA</h1>
-    <p></p>
-  </div>
-  <section>
-    <p>An upscale resale clothing boutique in historic downtown Albany.</p>
+
+  <header>
+    <div class="nav">
+      <div class="logo">1st Hand <span>Seconds</span></div>
+      <nav class="nav-links">
+        <a href="#mission">Mission</a>
+        <a href="#boutiques">Boutiques</a>
+        <a href="#visit">Visit</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="badge">Concept Redesign</div>
+      <h1>Upscale Resale with a Purpose</h1>
+      <p>Beautiful clothing &amp; bridal gowns in historic downtown Albany — every purchase supports women and children leaving domestic abuse.</p>
+      <div class="hero-cta">
+        <a href="#boutiques" class="btn btn-primary">Explore the Boutiques</a>
+        <a href="#visit" class="btn btn-ghost">Hours &amp; Location</a>
+      </div>
+    </div>
   </section>
-  <section class="hours"></section>
-  <footer>Design concept mockup — not 1st Hand Seconds | clothing | 411 Southwest 2nd Avenue, Albany, OR 97321, USA's official site, and not affiliated with the business. Built to show what a refreshed site could look like.</footer>
+
+  <section class="mission" id="mission">
+    <div class="mission-grid">
+      <div>
+        <div class="section-label">Why We Exist</div>
+        <h2>Supporting Mercy House International</h2>
+        <p class="lead">1st Hand Seconds is the fundraising arm of Mercy House International, a 501(c)(3) nonprofit dedicated to helping women and their children break free from abusive relationships.</p>
+      </div>
+      <div class="mission-card">
+        <h3>Your purchase has impact</h3>
+        <p>All profit from the boutiques goes directly toward housing, resources, and support for women and children in our community who are leaving domestic violence situations.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="boutiques">
+    <div class="section-label">What We Offer</div>
+    <h2>Two Boutiques, One Mission</h2>
+    <p class="lead" style="margin-bottom: 2.5rem;">Donated inventory, carefully curated. Designer finds, classic pieces, and bridal gowns at accessible prices.</p>
+
+    <div class="boutiques">
+      <div class="boutique-card">
+        <div class="tag">Main Floor</div>
+        <h3>1st Hand Seconds Unique Boutique</h3>
+        <p>An upscale resale clothing boutique in historic downtown Albany. Opened in 2010. Inventory is entirely donation-based — inspected, cleaned, and thoughtfully sorted. Known for quarterly dollar sales.</p>
+        <p style="font-size: 0.9rem; color: var(--muted);">Women's clothing · Shoes · Jewelry · Accessories</p>
+      </div>
+
+      <div class="boutique-card">
+        <div class="tag">Second Floor</div>
+        <h3>Chicee Chicee Bridal</h3>
+        <p>Appointment-only bridal boutique with over 300 gowns in sizes 0–32, plus veils, shoes, and accessories. Gently worn, never-worn, and vintage options. Average dress around $500.</p>
+        <p style="font-size: 0.9rem; color: var(--muted);">Call (541) 928-6909 to book an appointment</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="visit" style="background: #fff; border-top: 1px solid #eee;">
+    <div class="section-label">Plan Your Visit</div>
+    <h2>Hours &amp; Location</h2>
+
+    <div class="info-grid" style="margin-top: 2rem;">
+      <div class="info-box">
+        <h3>🕐 Hours</h3>
+        <ul class="hours-list">
+          <li><span class="day">Monday – Saturday</span><span class="time">10:00 am – 5:30 pm</span></li>
+          <li><span class="day">Sunday</span><span class="time">Closed</span></li>
+        </ul>
+      </div>
+
+      <div class="info-box">
+        <h3>📍 Location</h3>
+        <p style="margin-bottom: 0.75rem;"><strong>411 2nd Ave SW</strong><br>Albany, OR 97321</p>
+        <p style="color: var(--muted); font-size: 0.95rem;">Historic downtown Albany<br>Phone: (541) 928-6909</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band">
+    <h2>Shop with purpose</h2>
+    <p>Every dollar spent here helps Mercy House support women and children rebuilding their lives.</p>
+    <a href="https://www.1sthandseconds.org/" class="btn btn-primary" target="_blank" rel="noopener">Visit the Official Site</a>
+  </div>
+
+  <footer>
+    <div class="disclaimer">
+      <strong>Design Concept Mockup</strong>
+      This is not the official website of 1st Hand Seconds Unique Boutique or Mercy House International, and is not affiliated with the business. Created solely to demonstrate what a refreshed digital presence could look like.
+    </div>
+  </footer>
+
 </body>
 </html>
