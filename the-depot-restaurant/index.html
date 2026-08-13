@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Depot Restaurant — Redesign Concept</title>
+  <meta name="description" content="Concept redesign for The Depot Restaurant in Albany, Oregon — classic fish & chips since 1976.">
+  <style>
+    :root {
+      --navy: #1a2f4a;
+      --cream: #f7f4ef;
+      --gold: #c9a227;
+      --ink: #1c1c1c;
+      --muted: #5a5a5a;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, -apple-system, sans-serif; color: var(--ink); background: var(--cream); line-height: 1.55; }
+    a { color: var(--navy); text-decoration: none; }
+    header { background: var(--navy); color: #fff; position: sticky; top: 0; z-index: 50; }
+    .nav { max-width: 1100px; margin: 0 auto; padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-weight: 800; font-size: 1.35rem; letter-spacing: -0.02em; }
+    .logo span { color: var(--gold); }
+    .nav-links { display: flex; gap: 1.5rem; font-size: 0.95rem; }
+    .nav-links a { color: rgba(255,255,255,0.9); font-weight: 500; }
+    .nav-links a:hover { color: var(--gold); }
+
+    .hero {
+      background: linear-gradient(rgba(26,47,74,0.82), rgba(26,47,74,0.88)),
+                  url('https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1400&q=80') center/cover;
+      color: #fff; padding: 5.5rem 1.5rem 4.5rem; text-align: center;
+    }
+    .hero-inner { max-width: 680px; margin: 0 auto; }
+    .badge { display: inline-block; background: var(--gold); color: var(--navy); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 0.35rem 0.9rem; border-radius: 4px; margin-bottom: 1.2rem; }
+    .hero h1 { font-size: clamp(2.2rem, 5.5vw, 3.3rem); font-weight: 800; line-height: 1.1; margin-bottom: 0.8rem; letter-spacing: -0.03em; }
+    .hero p { font-size: 1.15rem; opacity: 0.92; max-width: 480px; margin: 0 auto 1.8rem; }
+    .btn { display: inline-block; padding: 0.8rem 1.6rem; border-radius: 6px; font-weight: 700; font-size: 0.95rem; transition: 0.15s; }
+    .btn-primary { background: var(--gold); color: var(--navy); }
+    .btn-primary:hover { background: #d4b12e; text-decoration: none; }
+    .btn-ghost { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.5); margin-left: 0.6rem; }
+    .btn-ghost:hover { background: rgba(255,255,255,0.1); text-decoration: none; }
+
+    section { max-width: 1100px; margin: 0 auto; padding: 4rem 1.5rem; }
+    .section-label { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+    h2 { font-size: clamp(1.7rem, 3.5vw, 2.2rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 1rem; }
+    .lead { font-size: 1.1rem; color: var(--muted); max-width: 540px; }
+
+    .story { background: #fff; border-top: 1px solid #e8e4de; border-bottom: 1px solid #e8e4de; }
+    .story-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; align-items: start; }
+    @media (max-width: 768px) { .story-grid { grid-template-columns: 1fr; } }
+    .story-card { background: var(--navy); color: #fff; border-radius: 12px; padding: 2rem; }
+    .story-card h3 { color: var(--gold); font-size: 1.1rem; margin-bottom: 0.6rem; }
+
+    .highlights { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.5rem; }
+    @media (max-width: 700px) { .highlights { grid-template-columns: 1fr; } }
+    .highlight { background: #fff; border: 1px solid #e8e4de; border-radius: 10px; padding: 1.5rem; text-align: center; }
+    .highlight .emoji { font-size: 1.8rem; margin-bottom: 0.5rem; }
+    .highlight h3 { font-size: 1.05rem; margin-bottom: 0.35rem; }
+    .highlight p { font-size: 0.9rem; color: var(--muted); }
+
+    .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; }
+    @media (max-width: 640px) { .info-grid { grid-template-columns: 1fr; } }
+    .info-box { background: #fff; border: 1px solid #e8e4de; border-radius: 12px; padding: 1.75rem; }
+    .info-box h3 { font-size: 1.1rem; margin-bottom: 1rem; }
+    .hours-list { list-style: none; }
+    .hours-list li { display: flex; justify-content: space-between; padding: 0.4rem 0; border-bottom: 1px solid #f0ece6; font-size: 0.95rem; }
+    .hours-list li:last-child { border-bottom: none; }
+    .hours-list .day { color: var(--muted); }
+    .hours-list .time { font-weight: 700; }
+
+    .cta-band { background: var(--navy); color: #fff; text-align: center; padding: 3.5rem 1.5rem; }
+    .cta-band h2 { color: #fff; margin-bottom: 0.6rem; }
+    .cta-band p { opacity: 0.9; margin-bottom: 1.5rem; }
+    .cta-band .btn-primary { background: var(--gold); color: var(--navy); }
+
+    footer { background: #111; color: rgba(255,255,255,0.65); padding: 2.5rem 1.5rem; text-align: center; font-size: 0.88rem; }
+    footer strong { color: #fff; display: block; margin-bottom: 0.5rem; }
+    .disclaimer { max-width: 600px; margin: 0 auto; line-height: 1.5; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="logo">The Depot <span>Restaurant</span></div>
+      <nav class="nav-links">
+        <a href="#story">Our Story</a>
+        <a href="#menu">Favorites</a>
+        <a href="#visit">Visit</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="badge">Concept Redesign</div>
+      <h1>Classic Fish &amp; Chips Since 1976</h1>
+      <p>Hand-cut fries, award-winning chowder, and Alaskan cod — served in Albany’s historic former bus depot.</p>
+      <div>
+        <a href="#visit" class="btn btn-primary">Hours &amp; Location</a>
+        <a href="#menu" class="btn btn-ghost">See Favorites</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="story" id="story">
+    <div class="story-grid">
+      <div>
+        <div class="section-label">Since 1976</div>
+        <h2>A local institution in a historic building</h2>
+        <p class="lead">The Depot opened in the old Trailways Bus Depot and has been serving consistent quality, fresh ingredients, and great service for nearly 50 years. Family-owned and still going strong.</p>
+      </div>
+      <div class="story-card">
+        <h3>What makes us different</h3>
+        <p>We source local Oregon produce. Our fish comes from Alaska through an Oregon business. Fries are hand-cut fresh when you order. We bread the fish only after you place your order.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="menu">
+    <div class="section-label">What People Come For</div>
+    <h2>Depot favorites</h2>
+    <p class="lead">Generous portions, fair prices, and the classics done right.</p>
+    <div class="highlights">
+      <div class="highlight">
+        <div class="emoji">🐟</div>
+        <h3>Fish &amp; Chips</h3>
+        <p>Alaskan cold-water true cod, hand-cut fries, and shrimp salad.</p>
+      </div>
+      <div class="highlight">
+        <div class="emoji">🥣</div>
+        <h3>Award-Winning Chowder</h3>
+        <p>House-made New England style, always served with Havarti cheese &amp; crackers.</p>
+      </div>
+      <div class="highlight">
+        <div class="emoji">🦐</div>
+        <h3>Shrimp &amp; Combos</h3>
+        <p>Butterfly prawns, scallops, oysters, and combo plates for every appetite.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="visit" style="background:#fff;border-top:1px solid #eee;">
+    <div class="section-label">Come See Us</div>
+    <h2>Hours &amp; Location</h2>
+    <div class="info-grid">
+      <div class="info-box">
+        <h3>🕐 Hours</h3>
+        <ul class="hours-list">
+          <li><span class="day">Monday – Sunday</span><span class="time">11:00 am – 8:00 pm</span></li>
+        </ul>
+        <p style="margin-top:1rem;font-size:0.9rem;color:var(--muted);">Open every day</p>
+      </div>
+      <div class="info-box">
+        <h3>📍 Location</h3>
+        <p style="margin-bottom:0.75rem;"><strong>822 Lyon Street S</strong><br>Albany, OR 97321</p>
+        <p style="color:var(--muted);font-size:0.95rem;">Phone: (541) 926-7326<br>Historic former Trailways Bus Depot</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band">
+    <h2>Hungry for real fish &amp; chips?</h2>
+    <p>Come in or call ahead. We’re open every day.</p>
+    <a href="tel:+15419267326" class="btn btn-primary">(541) 926-7326</a>
+  </div>
+
+  <footer>
+    <div class="disclaimer">
+      <strong>Design Concept Mockup</strong>
+      This is not the official website of The Depot Restaurant and is not affiliated with the business. Created solely to demonstrate what a refreshed digital presence could look like.
+    </div>
+  </footer>
+</body>
+</html>
