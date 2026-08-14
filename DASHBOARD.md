@@ -1,6 +1,6 @@
 # Endeavor & Business Dashboard
 
-**Last updated:** August 13, 2026 — Workstreams 1–5 launched
+**Last updated:** August 13, 2026 — Tasks 1–4 executed
 
 Central log for all active projects, target businesses, mockup status, service packages, and passive income streams.
 
@@ -10,11 +10,11 @@ Central log for all active projects, target businesses, mockup status, service p
 
 | # | Workstream | Status | Immediate Next Step |
 |---|------------|--------|---------------------|
-| 1 | Website redesigns for local independents | Active | Outreach with Depot + Millie's; build Brick & Mortar next |
-| 2 | Easy update systems + maintenance retainers | Defined | Include in every paid proposal |
-| 3 | Google Business + local visibility packages | Defined | Offer as $600–$1,200 add-on or standalone |
-| 4 | Simple automation for local businesses | Outlined | Start with review-request and lead follow-up flows |
-| 5 | Trading bot risk hardening | Ongoing | Continue circuit breakers, error taxonomy, kill-switch, monitoring |
+| 1 | Website redesigns for local independents | Active | **Send outreach** (Depot + Millie's drafts ready) |
+| 2 | Easy update systems + maintenance retainers | Defined | Use PROPOSAL_TEMPLATE when someone says yes |
+| 3 | Google Business + local visibility packages | Defined | Offer as add-on in proposals |
+| 4 | Simple automation for local businesses | Outlined | Start after first paid site |
+| 5 | Trading bot risk hardening | Advanced | Paper→live checklist + expanded order_errors live |
 
 ---
 
@@ -22,10 +22,10 @@ Central log for all active projects, target businesses, mockup status, service p
 
 | Endeavor | Status | Primary Goal | Next Action |
 |----------|--------|--------------|-------------|
-| **Albany Web Mockups** | Active | Free redesign concepts → paid website work | Outreach + more mockups |
-| **Poly Market Bot** | Ongoing | Prediction market trading (Polymarket + Kalshi) | Risk hardening + live readiness |
-| **Obsidian Vault** | Maintenance | Knowledge & AI notes storage | — |
-| **Side Gig Digital Products** | Active (in bot repo) | Templates & digital downloads | Continue product pipeline |
+| **Albany Web Mockups** | Active | Free redesign concepts → paid website work | **Outreach** |
+| **Poly Market Bot** | Ongoing | Prediction market trading | Follow PAPER_TO_LIVE_CHECKLIST |
+| **Obsidian Vault** | Maintenance | Knowledge storage | — |
+| **Side Gig Digital Products** | Active | Templates & downloads | Continue product pipeline |
 
 ---
 
@@ -35,9 +35,9 @@ Central log for all active projects, target businesses, mockup status, service p
 |----------|------|---------------|----------|-------|
 | 1st Hand Seconds Unique Boutique | Nonprofit resale + bridal | ✅ Complete | High | Ready |
 | Roger's Restaurant | Classic diner | ✅ Complete | High | Ready |
-| **The Depot Restaurant** | Fish & chips (est. 1976) | ✅ Complete | Very High | Highest priority outreach |
-| **Millie's Vintage Resale** | Vintage / resale | ✅ Complete | Very High | Highest priority outreach |
-| Brick & Mortar Cafe | Breakfast / brunch | Next | Medium-High | Build next |
+| **The Depot Restaurant** | Fish & chips (est. 1976) | ✅ Complete | Very High | Outreach draft ready |
+| **Millie's Vintage Resale** | Vintage / resale | ✅ Complete | Very High | Outreach draft ready (has email) |
+| **Brick & Mortar Cafe** | Breakfast / brunch | ✅ Complete | Medium-High | Existing site is minimal; concept improves clarity |
 | Sweet Red Bistro | Wine bistro | Planned | Medium | — |
 | Blacksmith Coffee Co. | Coffee (new) | Planned | Medium | Timing advantage |
 | Albany Antique Mall | Multi-dealer antiques | Planned | Medium | — |
@@ -46,7 +46,7 @@ Central log for all active projects, target businesses, mockup status, service p
 
 ## 3. Service Packages (Summary)
 
-See full details in `SERVICES.md`.
+See `SERVICES.md` and `PROPOSAL_TEMPLATE.md`.
 
 | Package | Target Price |
 |---------|--------------|
@@ -59,41 +59,31 @@ See full details in `SERVICES.md`.
 
 ---
 
-## 4. Passive & Semi-Passive Income Streams
-
-| Stream | Type | Status | Potential |
-|--------|------|--------|-----------|
-| Website design & builds | Service | Active pipeline | Primary near-term |
-| Monthly maintenance retainers | Recurring | Ready to sell | High once clients live |
-| Google Business / visibility packages | Service | Defined | Strong upsell |
-| Simple automations | Service | Outlined | Good add-on |
-| Template / starter kits | Digital product | Idea + side_gig work | Medium |
-| Prediction market bot profits | Trading | Ongoing | High upside / higher risk |
-
----
-
-## 5. Outreach Tracking
+## 4. Outreach Tracking
 
 | Business | Contacted? | Concept Sent? | Response | Notes |
 |----------|------------|---------------|----------|-------|
-| The Depot Restaurant | — | Ready | — | Highest priority |
-| Millie's Vintage Resale | — | Ready | — | Highest priority |
+| The Depot Restaurant | **Draft ready** | Ready | — | Call + email path in OUTREACH.md |
+| Millie's Vintage Resale | **Draft ready** | Ready | — | milliesvintagealbany@gmail.com |
+| Brick & Mortar Cafe | — | Ready | — | Has existing site; softer pitch |
 | 1st Hand Seconds | — | Ready | — | — |
 | Roger's Restaurant | — | Ready | — | — |
 
 ---
 
-## 6. Quick Links
+## 5. Quick Links
 
-- [SERVICES.md](./SERVICES.md) — Full package definitions
-- [AUTOMATION_OUTLINE.md](./AUTOMATION_OUTLINE.md) — Local business automation ideas
-- Repo: [albany-web-mockups](https://github.com/ru2nizy/albany-web-mockups)
+- [OUTREACH.md](./OUTREACH.md) — Ready-to-send messages
+- [PROPOSAL_TEMPLATE.md](./PROPOSAL_TEMPLATE.md) — Post-interest proposal
+- [SERVICES.md](./SERVICES.md) — Full packages
+- [AUTOMATION_OUTLINE.md](./AUTOMATION_OUTLINE.md) — Automation ideas
 - Live concepts:
-  - [1st Hand Seconds](./1st-hand-seconds-unique-boutique/)
-  - [Roger's Restaurant](./rogers-restaurant/)
   - [The Depot](./the-depot-restaurant/)
   - [Millie's Vintage](./millies-vintage-resale/)
+  - [Brick & Mortar](./brick-and-mortar-cafe/)
+  - [1st Hand Seconds](./1st-hand-seconds-unique-boutique/)
+  - [Roger's Restaurant](./rogers-restaurant/)
 
 ---
 
-*Update this dashboard whenever a mockup ships, outreach happens, or a client moves forward.*
+*Update when outreach is sent or a client moves forward.*
