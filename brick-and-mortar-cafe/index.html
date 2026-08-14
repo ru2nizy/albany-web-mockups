@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brick &amp; Mortar Cafe — Redesign Concept</title>
+  <meta name="description" content="Concept redesign for Brick & Mortar Cafe in downtown Albany, Oregon — breakfast, lunch, and bakery.">
+  <style>
+    :root {
+      --brick: #8b4513;
+      --warm: #f5efe6;
+      --ink: #1f1a14;
+      --muted: #6b5e4e;
+      --cream: #fffdf9;
+      --accent: #c45c26;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; color: var(--ink); background: var(--warm); line-height: 1.55; }
+    a { color: var(--brick); text-decoration: none; }
+    header { background: var(--cream); border-bottom: 1px solid #e8dfd2; position: sticky; top: 0; z-index: 50; }
+    .nav { max-width: 1100px; margin: 0 auto; padding: 0.9rem 1.4rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+    .logo { font-weight: 800; font-size: 1.2rem; letter-spacing: -0.02em; color: var(--ink); }
+    .logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 1.25rem; font-size: 0.92rem; flex-wrap: wrap; }
+    .nav-links a { color: var(--muted); font-weight: 600; }
+    .nav-links a:hover { color: var(--accent); }
+
+    .hero {
+      background: linear-gradient(105deg, rgba(31,26,20,0.88) 0%, rgba(139,69,19,0.75) 100%),
+                  url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1400&q=80') center/cover;
+      color: #fff; padding: 5rem 1.4rem 4.2rem;
+    }
+    .hero-inner { max-width: 640px; }
+    .badge { display: inline-block; background: var(--accent); color: #fff; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.3rem 0.75rem; border-radius: 4px; margin-bottom: 1rem; }
+    .hero h1 { font-size: clamp(2.1rem, 5vw, 3.1rem); font-weight: 800; line-height: 1.08; margin-bottom: 0.75rem; letter-spacing: -0.03em; }
+    .hero p { font-size: 1.1rem; opacity: 0.92; margin-bottom: 1.6rem; max-width: 460px; }
+    .btn { display: inline-block; padding: 0.75rem 1.4rem; border-radius: 6px; font-weight: 700; font-size: 0.94rem; transition: 0.15s; }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: #a84c1f; text-decoration: none; }
+    .btn-ghost { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.55); margin-left: 0.5rem; }
+    .btn-ghost:hover { background: rgba(255,255,255,0.12); text-decoration: none; }
+
+    section { max-width: 1100px; margin: 0 auto; padding: 3.5rem 1.4rem; }
+    .section-label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem; }
+    h2 { font-size: clamp(1.6rem, 3.2vw, 2.1rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.85rem; }
+    .lead { font-size: 1.05rem; color: var(--muted); max-width: 520px; }
+
+    .menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 2rem; }
+    @media (max-width: 800px) { .menu-grid { grid-template-columns: 1fr; } }
+    .menu-card { background: var(--cream); border: 1px solid #e8dfd2; border-radius: 12px; padding: 1.5rem; }
+    .menu-card h3 { font-size: 1.15rem; margin-bottom: 0.4rem; }
+    .menu-card p { font-size: 0.92rem; color: var(--muted); margin-bottom: 0.9rem; }
+    .menu-card .price-note { font-size: 0.82rem; color: var(--brick); font-weight: 600; }
+
+    .visit-band { background: var(--cream); border-top: 1px solid #e8dfd2; border-bottom: 1px solid #e8dfd2; }
+    .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1.75rem; }
+    @media (max-width: 640px) { .info-grid { grid-template-columns: 1fr; } }
+    .info-box { background: #fff; border: 1px solid #e8dfd2; border-radius: 12px; padding: 1.5rem; }
+    .info-box h3 { font-size: 1.05rem; margin-bottom: 0.85rem; }
+    .hours-list { list-style: none; }
+    .hours-list li { display: flex; justify-content: space-between; padding: 0.35rem 0; border-bottom: 1px solid #f3ebe0; font-size: 0.93rem; }
+    .hours-list li:last-child { border-bottom: none; }
+    .hours-list .day { color: var(--muted); }
+    .hours-list .time { font-weight: 700; }
+    .tip { margin-top: 1rem; font-size: 0.88rem; color: var(--muted); background: #faf6f0; padding: 0.75rem 0.9rem; border-radius: 8px; }
+
+    .cta-band { background: var(--ink); color: #fff; text-align: center; padding: 3.2rem 1.4rem; }
+    .cta-band h2 { color: #fff; margin-bottom: 0.5rem; }
+    .cta-band p { opacity: 0.88; margin-bottom: 1.4rem; }
+
+    footer { background: #16120e; color: rgba(255,255,255,0.6); padding: 2.2rem 1.4rem; text-align: center; font-size: 0.86rem; }
+    footer strong { color: #fff; display: block; margin-bottom: 0.45rem; }
+    .disclaimer { max-width: 620px; margin: 0 auto; line-height: 1.5; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="logo">Brick <span>&amp;</span> Mortar</div>
+      <nav class="nav-links">
+        <a href="#menu">Menu</a>
+        <a href="#visit">Hours</a>
+        <a href="#visit">Visit</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="badge">Concept Redesign</div>
+      <h1>Breakfast &amp; lunch in historic downtown Albany</h1>
+      <p>Rustic plates, generous portions, and a café that locals plan ahead for — worth the wait.</p>
+      <div>
+        <a href="#menu" class="btn btn-primary">See favorites</a>
+        <a href="#visit" class="btn btn-ghost">Hours &amp; location</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="menu">
+    <div class="section-label">What to order</div>
+    <h2>Breakfast, lunch &amp; drinks</h2>
+    <p class="lead">A clearer path to the plates people already rave about — benedicts, hashes, sandwiches, and specialty drinks.</p>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <h3>Breakfast</h3>
+        <p>Hashes, benedicts, chicken fried steak, huevos rancheros, and classic platters built for sharing.</p>
+        <div class="price-note">Popular: Carnitas Benedict · Huevos Rancheros</div>
+      </div>
+      <div class="menu-card">
+        <h3>Lunch</h3>
+        <p>BMC Club, salmon melt, Reuben, burgers, and fried fish — generous portions, fair prices.</p>
+        <div class="price-note">Sandwiches from the mid-teens</div>
+      </div>
+      <div class="menu-card">
+        <h3>Drinks</h3>
+        <p>Espresso bar, signature lattes, and a Bloody Mary bar for weekend brunch energy.</p>
+        <div class="price-note">Coffee · cocktails · specialty drinks</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="visit-band" id="visit">
+    <div class="section-label">Plan your visit</div>
+    <h2>Hours &amp; location</h2>
+    <div class="info-grid">
+      <div class="info-box">
+        <h3>Hours</h3>
+        <ul class="hours-list">
+          <li><span class="day">Monday – Friday</span><span class="time">8:00 am – 2:00 pm</span></li>
+          <li><span class="day">Saturday – Sunday</span><span class="time">8:00 am – 3:00 pm</span></li>
+        </ul>
+        <p class="tip">Weekend brunch often means a wait — locals recommend planning ahead.</p>
+      </div>
+      <div class="info-box">
+        <h3>Location</h3>
+        <p style="margin-bottom:0.7rem;"><strong>222 W 1st Ave, Ste 4</strong><br>Albany, OR 97321</p>
+        <p style="color:var(--muted);font-size:0.94rem;">Phone: (541) 791-7845<br>Historic downtown Albany</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band">
+    <h2>Ready for breakfast or brunch?</h2>
+    <p>Come early on weekends — the plates are worth it.</p>
+    <a href="tel:+15417917845" class="btn btn-primary">(541) 791-7845</a>
+  </div>
+
+  <footer>
+    <div class="disclaimer">
+      <strong>Design Concept Mockup</strong>
+      This is not the official website of Brick &amp; Mortar Cafe and is not affiliated with the business. Created solely to demonstrate a clearer, mobile-first digital presence.
+    </div>
+  </footer>
+</body>
+</html>
