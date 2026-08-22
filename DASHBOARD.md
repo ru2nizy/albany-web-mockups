@@ -1,6 +1,6 @@
 # Endeavor & Business Dashboard
 
-**Last updated:** August 13, 2026 — Tasks 1–4 executed
+**Last updated:** August 22, 2026 — Outreach armed with live Pages URLs
 
 Central log for all active projects, target businesses, mockup status, service packages, and passive income streams.
 
@@ -10,7 +10,7 @@ Central log for all active projects, target businesses, mockup status, service p
 
 | # | Workstream | Status | Immediate Next Step |
 |---|------------|--------|---------------------|
-| 1 | Website redesigns for local independents | Active | **Send outreach** (Depot + Millie's drafts ready) |
+| 1 | Website redesigns for local independents | Active | **Human send** (Depot + Millie's drafts armed) |
 | 2 | Easy update systems + maintenance retainers | Defined | Use PROPOSAL_TEMPLATE when someone says yes |
 | 3 | Google Business + local visibility packages | Defined | Offer as add-on in proposals |
 | 4 | Simple automation for local businesses | Outlined | Start after first paid site |
@@ -22,7 +22,7 @@ Central log for all active projects, target businesses, mockup status, service p
 
 | Endeavor | Status | Primary Goal | Next Action |
 |----------|--------|--------------|-------------|
-| **Albany Web Mockups** | Active | Free redesign concepts → paid website work | **Outreach** |
+| **Albany Web Mockups** | Active | Free redesign concepts → paid website work | **Human outreach** |
 | **Poly Market Bot** | Ongoing | Prediction market trading | Follow PAPER_TO_LIVE_CHECKLIST |
 | **Obsidian Vault** | Maintenance | Knowledge storage | — |
 | **Side Gig Digital Products** | Active | Templates & downloads | Continue product pipeline |
@@ -35,8 +35,8 @@ Central log for all active projects, target businesses, mockup status, service p
 |----------|------|---------------|----------|-------|
 | 1st Hand Seconds Unique Boutique | Nonprofit resale + bridal | ✅ Complete | High | Ready |
 | Roger's Restaurant | Classic diner | ✅ Complete | High | Ready |
-| **The Depot Restaurant** | Fish & chips (est. 1976) | ✅ Complete | Very High | Outreach draft ready |
-| **Millie's Vintage Resale** | Vintage / resale | ✅ Complete | Very High | Outreach draft ready (has email) |
+| **The Depot Restaurant** | Fish & chips (est. 1976) | ✅ Complete | Very High | Outreach armed |
+| **Millie's Vintage Resale** | Vintage / resale | ✅ Complete | Very High | Outreach armed (has email) |
 | **Brick & Mortar Cafe** | Breakfast / brunch | ✅ Complete | Medium-High | Existing site is minimal; concept improves clarity |
 | Sweet Red Bistro | Wine bistro | Planned | Medium | — |
 | Blacksmith Coffee Co. | Coffee (new) | Planned | Medium | Timing advantage |
@@ -63,17 +63,19 @@ See `SERVICES.md` and `PROPOSAL_TEMPLATE.md`.
 
 | Business | Contacted? | Concept Sent? | Response | Notes |
 |----------|------------|---------------|----------|-------|
-| The Depot Restaurant | **Draft ready** | Ready | — | Call + email path in OUTREACH.md |
-| Millie's Vintage Resale | **Draft ready** | Ready | — | milliesvintagealbany@gmail.com |
+| The Depot Restaurant | **Armed** | Ready | — | Call + email path in OUTREACH.md; live link |
+| Millie's Vintage Resale | **Armed** | Ready | — | milliesvintagealbany@gmail.com; live link |
 | Brick & Mortar Cafe | — | Ready | — | Has existing site; softer pitch |
 | 1st Hand Seconds | — | Ready | — | — |
 | Roger's Restaurant | — | Ready | — | — |
+
+**Contacted count remains 0 until Terin logs a send.**
 
 ---
 
 ## 5. Quick Links
 
-- [OUTREACH.md](./OUTREACH.md) — Ready-to-send messages
+- [OUTREACH.md](./OUTREACH.md) — Armed ready-to-send messages
 - [PROPOSAL_TEMPLATE.md](./PROPOSAL_TEMPLATE.md) — Post-interest proposal
 - [SERVICES.md](./SERVICES.md) — Full packages
 - [AUTOMATION_OUTLINE.md](./AUTOMATION_OUTLINE.md) — Automation ideas

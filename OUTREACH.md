@@ -1,8 +1,10 @@
-# Outreach Drafts — Ready to Send
+# Outreach Drafts — Armed / Ready to Send
 
-**Last updated:** August 13, 2026
+**Last updated:** August 22, 2026
 
-Copy, personalize slightly if needed, and send. Keep the free concept framing — no hard sell.
+**Status:** Live concept links verified. Copy, personalize your phone/email if needed, and send **yourself**. No automation sends these.
+
+Keep the free concept framing — no hard sell.
 
 ---
 
@@ -24,8 +26,7 @@ Hi —
 I’m a local designer/developer in the area. I put together a free redesign *concept* for The Depot’s website — not the official site, and not affiliated with your business. It’s just a design mockup showing how the story (since 1976), the fish & chips, and hours/location could come across more clearly, especially on phones.
 
 You can view it here:  
-[GitHub Pages or local path once enabled]  
-https://github.com/ru2nizy/albany-web-mockups/tree/main/the-depot-restaurant
+https://ru2nizy.github.io/albany-web-mockups/the-depot-restaurant/
 
 If you like the direction and ever want a real site that’s easy for you to update (menus, hours, specials), I’m happy to talk. If not, no worries at all — hope the concept is at least interesting to look at.
 
@@ -51,7 +52,7 @@ Hi —
 I’m local and put together a free redesign *concept* for Millie’s Vintage Resale. It’s not your official website and I’m not affiliated with the shop — just a design mockup showing how a simple, warm site could help people find you, see what you carry, and plan a visit.
 
 View the concept:  
-https://github.com/ru2nizy/albany-web-mockups/tree/main/millies-vintage-resale
+https://ru2nizy.github.io/albany-web-mockups/millies-vintage-resale/
 
 A lot of independent shops either have no site or something that’s hard to update. The idea here is a clean, mobile-friendly page that matches the feel of the store without becoming a second full-time job.
 
@@ -75,3 +76,5 @@ Terin
 |----------|-------|------|---------|----------|
 | The Depot | | | Call / email | |
 | Millie's | | | Email | |
+
+*Only Terin marks a row as Sent. Automations never send.*
