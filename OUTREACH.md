@@ -2,7 +2,7 @@
 
 **Last updated:** August 22, 2026
 
-**Status:** Live concept links verified. Copy, personalize your phone/email if needed, and send **yourself**. No automation sends these.
+**Status:** Live concept links verified. Phone filled. Copy and send **yourself**. No automation sends these.
 
 Keep the free concept framing — no hard sell.
 
@@ -33,8 +33,7 @@ If you like the direction and ever want a real site that’s easy for you to upd
 Thanks for keeping a local institution going for nearly 50 years.
 
 Terin  
-[your phone]  
-[optional email]
+425-941-6212
 
 ---
 
@@ -60,7 +59,7 @@ If you ever want something like this built for real (easy for you to update your
 
 Best,  
 Terin  
-[your phone]
+425-941-6212
 
 ---
 
