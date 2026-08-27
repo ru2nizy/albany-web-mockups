@@ -55,8 +55,8 @@ MAX_SHARED_CSS_BYTES = 12_288
 
 
 def _has_disclaimer(text: str) -> bool:
-    low = text.lower()
-    return "not affiliated" in low or "concept" in low or "concepts only" in low
+    # "Concept Redesign" in the title is not enough — require affiliation language.
+    return "not affiliated" in text.lower()
 
 
 def _blocked_hosts_in(text: str) -> list[str]:
