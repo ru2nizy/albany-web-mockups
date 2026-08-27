@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Natty Dresser — Redesign Concept</title>
+  <meta name="description" content="Concept redesign for The Natty Dresser, an independent menswear shop in downtown Albany, Oregon.">
+  <style>
+    :root {
+      --navy: #1b2a41;
+      --camel: #c4a574;
+      --ink: #1a1a1a;
+      --muted: #5c564c;
+      --cream: #f4f0e8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "Georgia", "Times New Roman", serif; color: var(--ink); background: var(--cream); line-height: 1.6; }
+    a { color: var(--navy); text-decoration: none; }
+    header { background: var(--navy); color: #fff; position: sticky; top: 0; z-index: 50; }
+    .nav { max-width: 1100px; margin: 0 auto; padding: 0.95rem 1.5rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; font-family: system-ui, sans-serif; }
+    .logo { font-weight: 700; font-size: 1.15rem; letter-spacing: 0.01em; }
+    .logo span { color: var(--camel); }
+    .nav-links { display: flex; gap: 1.4rem; font-size: 0.92rem; flex-wrap: wrap; }
+    .nav-links a { color: rgba(255,255,255,0.9); font-weight: 600; }
+    .nav-links a:hover { color: var(--camel); }
+    .hero {
+      background: linear-gradient(rgba(27,42,65,0.82), rgba(26,26,26,0.86)),
+                  url('https://images.unsplash.com/photo-1594938291221-94f18b1e0c2d?w=1400&q=80') center/cover;
+      color: #fff; padding: 5.5rem 1.5rem 4.5rem; text-align: center;
+    }
+    .hero-inner { max-width: 700px; margin: 0 auto; }
+    .badge { display: inline-block; background: var(--camel); color: var(--navy); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.35rem 0.9rem; border-radius: 4px; margin-bottom: 1.2rem; font-family: system-ui, sans-serif; }
+    .hero h1 { font-size: clamp(2.05rem, 5.2vw, 3rem); font-weight: 700; line-height: 1.15; margin-bottom: 0.8rem; }
+    .hero p { font-size: 1.12rem; opacity: 0.92; max-width: 540px; margin: 0 auto 1.8rem; }
+    .btn { display: inline-block; padding: 0.8rem 1.55rem; border-radius: 6px; font-weight: 700; font-size: 0.94rem; transition: 0.15s; font-family: system-ui, sans-serif; }
+    .btn-primary { background: var(--camel); color: var(--navy); }
+    .btn-primary:hover { background: #d4b686; text-decoration: none; }
+    .btn-ghost { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.55); margin-left: 0.5rem; }
+    .btn-ghost:hover { background: rgba(255,255,255,0.1); text-decoration: none; }
+    section { max-width: 1100px; margin: 0 auto; padding: 4rem 1.5rem; }
+    .section-label { font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--camel); margin-bottom: 0.5rem; font-family: system-ui, sans-serif; }
+    h2 { font-size: clamp(1.65rem, 3.4vw, 2.15rem); font-weight: 700; margin-bottom: 1rem; }
+    .lead { font-size: 1.08rem; color: var(--muted); max-width: 560px; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; margin-top: 2.2rem; }
+    @media (max-width: 700px) { .cards { grid-template-columns: 1fr; } }
+    .card { background: #fff; border: 1px solid #e4ddd0; border-radius: 12px; padding: 1.6rem; }
+    .card h3 { font-size: 1.08rem; margin-bottom: 0.4rem; }
+    .card p { font-size: 0.93rem; color: var(--muted); }
+    .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; }
+    @media (max-width: 640px) { .info-grid { grid-template-columns: 1fr; } }
+    .info-box { background: #fff; border: 1px solid #e4ddd0; border-radius: 12px; padding: 1.75rem; }
+    .info-box h3 { font-size: 1.1rem; margin-bottom: 1rem; font-family: system-ui, sans-serif; }
+    .hours-list { list-style: none; font-family: system-ui, sans-serif; }
+    .hours-list li { display: flex; justify-content: space-between; gap: 1rem; padding: 0.4rem 0; border-bottom: 1px solid #f0ebe3; font-size: 0.95rem; }
+    .hours-list li:last-child { border-bottom: none; }
+    .hours-list .day { color: var(--muted); }
+    .hours-list .time { font-weight: 700; }
+    .cta-band { background: var(--navy); color: #fff; text-align: center; padding: 3.5rem 1.5rem; }
+    .cta-band h2 { color: #fff; margin-bottom: 0.6rem; }
+    .cta-band p { opacity: 0.92; margin-bottom: 1.5rem; }
+    .cta-band .btn { margin: 0.3rem; }
+    footer { background: #11151c; color: rgba(255,255,255,0.65); padding: 2.5rem 1.5rem; text-align: center; font-size: 0.88rem; font-family: system-ui, sans-serif; }
+    footer strong { color: #fff; display: block; margin-bottom: 0.5rem; }
+    .disclaimer { max-width: 620px; margin: 0 auto; line-height: 1.5; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="logo">The Natty <span>Dresser</span></div>
+      <nav class="nav-links">
+        <a href="#menswear">Menswear</a>
+        <a href="#services">Services</a>
+        <a href="#visit">Hours</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="badge">Concept Redesign</div>
+      <h1>Independent haberdashery in downtown Albany</h1>
+      <p>The only full-service menswear shop serving Albany, Corvallis, Lebanon, Salem, Eugene, and Springfield — casual to custom, with tailors in the shop.</p>
+      <div>
+        <a href="#menswear" class="btn btn-primary">Shop menswear</a>
+        <a href="#visit" class="btn btn-ghost">Hours &amp; location</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="menswear">
+    <div class="section-label">What they sell</div>
+    <h2>Menswear from casual to custom</h2>
+    <p class="lead">Positioning pulled from thenattydresser.com — clothing, shoes, hats, grooming, jewelry, watches, colognes, gifts, and more.</p>
+    <div class="cards">
+      <div class="card">
+        <h3>Suits &amp; made-to-measure</h3>
+        <p>Premium and made-to-measure suits, plus custom suit consultations by appointment. Data-Fit shirts and pants for a closer fit without a fully bespoke process.</p>
+      </div>
+      <div class="card">
+        <h3>Tuxedo &amp; suit rentals</h3>
+        <p>Special-occasion rentals for weddings, prom, and black-tie. After-hours measurement appointments can be arranged when regular hours don’t work.</p>
+      </div>
+      <div class="card">
+        <h3>Everyday &amp; accessories</h3>
+        <p>Casual to business attire, shoes, hats, neckwear, grooming supplies, jewelry, watches, colognes, and gifts.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" style="background:#fff;border-top:1px solid #e4ddd0;border-bottom:1px solid #e4ddd0;">
+    <div class="section-label">In the shop</div>
+    <h2>Tailoring, alterations, and fittings</h2>
+    <p class="lead">Services listed on their site — not just a clothing floor.</p>
+    <div class="cards">
+      <div class="card">
+        <h3>Alterations</h3>
+        <p>Men’s, women’s, formal, casual, and military. They do not work on down-filled items. Appointments are required for wedding-gown and formal-dress consultations.</p>
+      </div>
+      <div class="card">
+        <h3>Custom clothier</h3>
+        <p>Certified Custom Clothier through the Custom Tailors and Designers Association. Custom suits and vests for men and women.</p>
+      </div>
+      <div class="card">
+        <h3>More services</h3>
+        <p>Custom shirts, bridal fittings, vintage shoe shines, hat repairs, and personalized letterman jackets — as listed on the official site.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="visit">
+    <div class="section-label">Plan your visit</div>
+    <h2>Hours &amp; location</h2>
+    <div class="info-grid">
+      <div class="info-box">
+        <h3>Hours</h3>
+        <ul class="hours-list">
+          <li><span class="day">Monday – Saturday</span><span class="time">10:00 am – 5:00 pm</span></li>
+        </ul>
+        <p style="margin-top:1rem;font-size:0.9rem;color:var(--muted);">Hours as published on thenattydresser.com/contact-us. Sunday is not listed there — call to confirm. Established 2014; current shop since 2020.</p>
+      </div>
+      <div class="info-box">
+        <h3>Location</h3>
+        <p style="margin-bottom:0.75rem;"><strong>124 Broadalbin Street Southwest</strong><br>Albany, OR 97321</p>
+        <p style="color:var(--muted);font-size:0.95rem;">Phone: <a href="tel:+15412483561">(541) 248-3561</a><br>Downtown Albany Historic District<br>Young &amp; Son Dept. Store building</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band">
+    <h2>Dress well. Be confident.</h2>
+    <p>Call for a custom consultation, or stop in during shop hours. No appointment needed for off-the-rack clothing.</p>
+    <a href="tel:+15412483561" class="btn btn-primary">(541) 248-3561</a>
+    <a href="http://www.thenattydresser.com/" class="btn btn-ghost" target="_blank" rel="noopener">Official site</a>
+    <a href="mailto:thenattydresser@gmail.com" class="btn btn-ghost">Email</a>
+  </div>
+
+  <footer>
+    <div class="disclaimer">
+      <strong>Design Concept Mockup</strong>
+      This is not the official website of The Natty Dresser and is not affiliated with the business. Created solely to demonstrate what a refreshed digital presence could look like.
+    </div>
+  </footer>
+</body>
+</html>
