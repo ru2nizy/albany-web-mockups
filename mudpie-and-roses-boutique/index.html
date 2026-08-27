@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mudpie and Roses Boutique — Redesign Concept</title>
+  <meta name="description" content="Concept redesign for Mudpie and Roses Boutique in downtown Albany, Oregon — IOD moulds, transfers, stamps, and Annie Sloan chalk paint.">
+  <style>
+    :root {
+      --rose: #b76e79;
+      --sage: #7a8f6a;
+      --ink: #2c2422;
+      --muted: #6b5e5a;
+      --cream: #faf7f3;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "Georgia", "Times New Roman", serif; color: var(--ink); background: var(--cream); line-height: 1.6; }
+    a { color: var(--rose); text-decoration: none; }
+    header { background: #fff; border-bottom: 1px solid #eadfd8; position: sticky; top: 0; z-index: 50; }
+    .nav { max-width: 1100px; margin: 0 auto; padding: 0.95rem 1.5rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; font-family: system-ui, sans-serif; }
+    .logo { font-weight: 700; font-size: 1.15rem; letter-spacing: -0.01em; }
+    .logo span { color: var(--rose); }
+    .nav-links { display: flex; gap: 1.4rem; font-size: 0.92rem; flex-wrap: wrap; }
+    .nav-links a { color: var(--muted); font-weight: 600; }
+    .nav-links a:hover { color: var(--rose); }
+    .hero {
+      background: linear-gradient(135deg, #4a3538 0%, #b76e79 100%);
+      color: #fff; padding: 5.5rem 1.5rem 4.5rem; text-align: center;
+    }
+    .hero-inner { max-width: 680px; margin: 0 auto; }
+    .badge { display: inline-block; background: var(--sage); color: #fff; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.35rem 0.9rem; border-radius: 999px; margin-bottom: 1.2rem; font-family: system-ui, sans-serif; }
+    .hero h1 { font-size: clamp(2.05rem, 5.2vw, 3rem); font-weight: 700; line-height: 1.15; margin-bottom: 0.8rem; }
+    .hero p { font-size: 1.12rem; opacity: 0.92; max-width: 520px; margin: 0 auto 1.8rem; }
+    .btn { display: inline-block; padding: 0.8rem 1.55rem; border-radius: 6px; font-weight: 700; font-size: 0.94rem; transition: 0.15s; font-family: system-ui, sans-serif; }
+    .btn-primary { background: #fff; color: var(--rose); }
+    .btn-primary:hover { background: var(--cream); text-decoration: none; }
+    .btn-ghost { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.55); margin-left: 0.5rem; }
+    .btn-ghost:hover { background: rgba(255,255,255,0.1); text-decoration: none; }
+    section { max-width: 1100px; margin: 0 auto; padding: 4rem 1.5rem; }
+    .section-label { font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--rose); margin-bottom: 0.5rem; font-family: system-ui, sans-serif; }
+    h2 { font-size: clamp(1.65rem, 3.4vw, 2.15rem); font-weight: 700; margin-bottom: 1rem; }
+    .lead { font-size: 1.08rem; color: var(--muted); max-width: 560px; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; margin-top: 2.2rem; }
+    @media (max-width: 700px) { .cards { grid-template-columns: 1fr; } }
+    .card { background: #fff; border: 1px solid #eadfd8; border-radius: 12px; padding: 1.6rem; }
+    .card h3 { font-size: 1.08rem; margin-bottom: 0.4rem; }
+    .card p { font-size: 0.93rem; color: var(--muted); }
+    .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; }
+    @media (max-width: 640px) { .info-grid { grid-template-columns: 1fr; } }
+    .info-box { background: #fff; border: 1px solid #eadfd8; border-radius: 12px; padding: 1.75rem; }
+    .info-box h3 { font-size: 1.1rem; margin-bottom: 1rem; font-family: system-ui, sans-serif; }
+    .hours-list { list-style: none; font-family: system-ui, sans-serif; }
+    .hours-list li { display: flex; justify-content: space-between; gap: 1rem; padding: 0.4rem 0; border-bottom: 1px solid #f3ebe6; font-size: 0.95rem; }
+    .hours-list li:last-child { border-bottom: none; }
+    .hours-list .day { color: var(--muted); }
+    .hours-list .time { font-weight: 700; }
+    .cta-band { background: var(--rose); color: #fff; text-align: center; padding: 3.5rem 1.5rem; }
+    .cta-band h2 { color: #fff; margin-bottom: 0.6rem; }
+    .cta-band p { opacity: 0.92; margin-bottom: 1.5rem; }
+    .cta-band .btn { margin: 0.3rem; }
+    .cta-band .btn-primary { background: #fff; color: var(--rose); }
+    footer { background: #2c2422; color: rgba(255,255,255,0.65); padding: 2.5rem 1.5rem; text-align: center; font-size: 0.88rem; font-family: system-ui, sans-serif; }
+    footer strong { color: #fff; display: block; margin-bottom: 0.5rem; }
+    .disclaimer { max-width: 620px; margin: 0 auto; line-height: 1.5; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="logo">Mudpie <span>&amp; Roses</span></div>
+      <nav class="nav-links">
+        <a href="#shop">Shop</a>
+        <a href="#visit">Hours</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="badge">Concept Redesign</div>
+      <h1>Spruce up home decor and craft projects</h1>
+      <p>A downtown Albany boutique for Iron Orchid Designs moulds, transfers, and stamps, plus Annie Sloan chalk paint and specialty papers. Also in Corvallis.</p>
+      <div>
+        <a href="#shop" class="btn btn-primary">What they sell</a>
+        <a href="#visit" class="btn btn-ghost">Hours &amp; location</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="shop">
+    <div class="section-label">Come explore the magic of creativity</div>
+    <h2>IOD, paint, and paper</h2>
+    <p class="lead">Positioning pulled from mudpieandroses.com — supplies for furniture makeovers, junk journals, and French-country-style decor.</p>
+    <div class="cards">
+      <div class="card">
+        <h3>IOD moulds, transfers &amp; stamps</h3>
+        <p>Iron Orchid Designs collections, including seasonal winter releases, for furniture, mixed media, and crafts.</p>
+      </div>
+      <div class="card">
+        <h3>Annie Sloan chalk paint</h3>
+        <p>Paint, brushes, and supplies for furniture projects — listed as a core collection on the official shop.</p>
+      </div>
+      <div class="card">
+        <h3>Specialty papers &amp; inks</h3>
+        <p>Decoupage Queen rice paper and ink pads for journals, scrapbooking, and home-decor projects.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="visit" style="background:#fff;border-top:1px solid #eadfd8;">
+    <div class="section-label">Plan your visit</div>
+    <h2>Hours &amp; location</h2>
+    <div class="info-grid">
+      <div class="info-box">
+        <h3>Albany hours</h3>
+        <ul class="hours-list">
+          <li><span class="day">Wednesday – Friday</span><span class="time">11:00 am – 5:30 pm</span></li>
+          <li><span class="day">Saturday</span><span class="time">11:00 am – 4:00 pm</span></li>
+          <li><span class="day">Sunday – Tuesday</span><span class="time">Closed</span></li>
+        </ul>
+        <p style="margin-top:1rem;font-size:0.9rem;color:var(--muted);">Hours as published on mudpieandroses.com. A second shop is listed at 411 3rd St., Corvallis.</p>
+      </div>
+      <div class="info-box">
+        <h3>Albany shop</h3>
+        <p style="margin-bottom:0.75rem;"><strong>117 SW 3rd Ave</strong><br>Albany, OR 97321</p>
+        <p style="color:var(--muted);font-size:0.95rem;">Phone: <a href="tel:+14582629077">(458) 262-9077</a><br>Historic downtown Albany</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band">
+    <h2>Stop in downtown Albany</h2>
+    <p>Call, email, or shop the official site. Free standard shipping on orders $50+ in the USA, per their shop.</p>
+    <a href="tel:+14582629077" class="btn btn-primary">(458) 262-9077</a>
+    <a href="http://mudpieandroses.com/" class="btn btn-ghost" target="_blank" rel="noopener">Official site</a>
+    <a href="mailto:mudpieandroses@gmail.com" class="btn btn-ghost">Email</a>
+  </div>
+
+  <footer>
+    <div class="disclaimer">
+      <strong>Design Concept Mockup</strong>
+      This is not the official website of Mudpie and Roses Boutique and is not affiliated with the business. Created solely to demonstrate what a refreshed digital presence could look like.
+    </div>
+  </footer>
+</body>
+</html>
