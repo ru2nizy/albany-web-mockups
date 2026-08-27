@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Squeaky Cork — Redesign Concept</title>
+  <meta name="description" content="Concept redesign for The Squeaky Cork, a Scottish restaurant and whiskey bar in downtown Albany, Oregon.">
+  <style>
+    :root {
+      --amber: #c4782a;
+      --whisky: #2a1c14;
+      --copper: #b87333;
+      --cream: #f4ece0;
+      --ink: #1c140e;
+      --muted: #6a5848;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Georgia, "Times New Roman", serif; color: var(--ink); background: var(--cream); line-height: 1.6; }
+    a { color: var(--copper); text-decoration: none; }
+    header { background: var(--whisky); color: #fff; position: sticky; top: 0; z-index: 50; }
+    .nav { max-width: 1100px; margin: 0 auto; padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; font-family: system-ui, sans-serif; }
+    .logo { font-weight: 800; font-size: 1.2rem; letter-spacing: 0.01em; }
+    .logo span { color: var(--amber); }
+    .nav-links { display: flex; gap: 1.4rem; font-size: 0.92rem; flex-wrap: wrap; }
+    .nav-links a { color: rgba(255,255,255,0.88); font-weight: 600; }
+    .nav-links a:hover { color: var(--amber); }
+    .hero {
+      background: linear-gradient(rgba(42,28,20,0.84), rgba(42,28,20,0.9)),
+                  url('https://images.unsplash.com/photo-1527169402691-feff5539e1e3?w=1400&q=80') center/cover;
+      color: #fff; padding: 5.5rem 1.5rem 4.5rem; text-align: center;
+    }
+    .hero-inner { max-width: 680px; margin: 0 auto; }
+    .badge { display: inline-block; background: var(--amber); color: var(--whisky); font-size: 0.72rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.35rem 0.9rem; border-radius: 4px; margin-bottom: 1.2rem; font-family: system-ui, sans-serif; }
+    .hero h1 { font-size: clamp(2.1rem, 5.5vw, 3.2rem); font-weight: 700; line-height: 1.12; margin-bottom: 0.8rem; }
+    .hero p { font-size: 1.15rem; opacity: 0.92; max-width: 520px; margin: 0 auto 1.8rem; }
+    .btn { display: inline-block; padding: 0.8rem 1.55rem; border-radius: 6px; font-weight: 700; font-size: 0.94rem; transition: 0.15s; font-family: system-ui, sans-serif; }
+    .btn-primary { background: var(--amber); color: var(--whisky); }
+    .btn-primary:hover { background: #d48938; text-decoration: none; }
+    .btn-ghost { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.5); margin-left: 0.5rem; }
+    .btn-ghost:hover { background: rgba(255,255,255,0.1); text-decoration: none; }
+    section { max-width: 1100px; margin: 0 auto; padding: 4rem 1.5rem; }
+    .section-label { font-size: 0.78rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--copper); margin-bottom: 0.5rem; font-family: system-ui, sans-serif; }
+    h2 { font-size: clamp(1.7rem, 3.5vw, 2.2rem); font-weight: 700; margin-bottom: 1rem; }
+    .lead { font-size: 1.1rem; color: var(--muted); max-width: 540px; }
+    .library { background: #fff; border-top: 1px solid #e6d9c8; border-bottom: 1px solid #e6d9c8; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.2rem; }
+    @media (max-width: 700px) { .cards { grid-template-columns: 1fr; } }
+    .card { background: #fff; border: 1px solid #e6d9c8; border-radius: 12px; padding: 1.6rem; }
+    .card h3 { font-size: 1.1rem; margin-bottom: 0.4rem; }
+    .card p { font-size: 0.94rem; color: var(--muted); }
+    .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; }
+    @media (max-width: 640px) { .info-grid { grid-template-columns: 1fr; } }
+    .info-box { background: #fff; border: 1px solid #e6d9c8; border-radius: 12px; padding: 1.75rem; }
+    .info-box h3 { font-size: 1.1rem; margin-bottom: 1rem; }
+    .hours-list { list-style: none; }
+    .hours-list li { display: flex; justify-content: space-between; gap: 1rem; padding: 0.4rem 0; border-bottom: 1px solid #f0e6d8; font-size: 0.95rem; font-family: system-ui, sans-serif; }
+    .hours-list li:last-child { border-bottom: none; }
+    .hours-list .day { color: var(--muted); }
+    .hours-list .time { font-weight: 700; }
+    .cta-band { background: var(--whisky); color: #fff; text-align: center; padding: 3.5rem 1.5rem; }
+    .cta-band h2 { color: #fff; margin-bottom: 0.6rem; }
+    .cta-band p { opacity: 0.9; margin-bottom: 1.5rem; }
+    .cta-band .btn { margin: 0.3rem; }
+    footer { background: #140e0a; color: rgba(255,255,255,0.65); padding: 2.5rem 1.5rem; text-align: center; font-size: 0.88rem; font-family: system-ui, sans-serif; }
+    footer strong { color: #fff; display: block; margin-bottom: 0.5rem; }
+    .disclaimer { max-width: 600px; margin: 0 auto; line-height: 1.5; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="logo">The Squeaky <span>Cork</span></div>
+      <nav class="nav-links">
+        <a href="#library">The Bar</a>
+        <a href="#menu">Menu</a>
+        <a href="#visit">Hours</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="badge">Concept Redesign</div>
+      <h1>320+ whiskeys in a downtown Scottish pub</h1>
+      <p>A warm, cozy restaurant and cocktail bar in historic Albany — hours and the whiskey library, easy to find on a phone.</p>
+      <div>
+        <a href="#visit" class="btn btn-primary">See hours</a>
+        <a href="#library" class="btn btn-ghost">The whiskey library</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="library" id="library">
+    <div class="section-label">The pour</div>
+    <h2>Whiskey library, cocktails, and pub comfort</h2>
+    <p class="lead">The official site describes a full bar with 320+ whiskeys plus spirits, beer, wine, and craft cocktails.</p>
+    <div class="cards">
+      <div class="card">
+        <h3>Whiskey library</h3>
+        <p>More than 320 whiskeys. Ask the bar for current pours and specials — the list changes as bottles come and go.</p>
+      </div>
+      <div class="card">
+        <h3>Craft cocktails</h3>
+        <p>Old Fashioneds and other classics sit alongside beer and wine. A smaller venue with a neighborhood-pub feel.</p>
+      </div>
+      <div class="card">
+        <h3>Scottish pub plates</h3>
+        <p>Pub classics from the kitchen. The full food menu lives on the official site — stop in or check there for tonight’s specials.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="menu">
+    <div class="section-label">From the kitchen</div>
+    <h2>Pub classics</h2>
+    <p class="lead">The house invites families and friends for comfort food with a drink. Follow The Squeaky Cork on Facebook and Instagram for menu specials — this concept does not invent a price list.</p>
+  </section>
+
+  <section id="visit" style="background:#fff;border-top:1px solid #e6d9c8;">
+    <div class="section-label">Plan your visit</div>
+    <h2>Hours &amp; location</h2>
+    <div class="info-grid">
+      <div class="info-box">
+        <h3>Hours</h3>
+        <ul class="hours-list">
+          <li><span class="day">Wednesday – Saturday</span><span class="time">4:00 pm – 10:00 pm</span></li>
+          <li><span class="day">Sunday – Tuesday</span><span class="time">Closed</span></li>
+        </ul>
+        <p style="margin-top:1rem;font-size:0.9rem;color:var(--muted);">Hours as published on thesqueakycork.com. Call if you’re visiting on a holiday.</p>
+      </div>
+      <div class="info-box">
+        <h3>Location</h3>
+        <p style="margin-bottom:0.75rem;"><strong>136 SW 1st St.</strong><br>Albany, OR 97321</p>
+        <p style="color:var(--muted);font-size:0.95rem;">Phone: <a href="tel:+15419812140">(541) 981-2140</a><br>Historic downtown Albany</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band">
+    <h2>Come in after 4.</h2>
+    <p>Wednesday through Saturday. Call, email, or check the official site before you go.</p>
+    <a href="tel:+15419812140" class="btn btn-primary">(541) 981-2140</a>
+    <a href="https://www.thesqueakycork.com/" class="btn btn-ghost" target="_blank" rel="noopener">Official site</a>
+    <a href="mailto:thesqueakycork@gmail.com" class="btn btn-ghost">Email</a>
+  </div>
+
+  <footer>
+    <div class="disclaimer">
+      <strong>Design Concept Mockup</strong>
+      This is not the official website of The Squeaky Cork and is not affiliated with the business. Created solely to demonstrate what a refreshed digital presence could look like.
+    </div>
+  </footer>
+</body>
+</html>
