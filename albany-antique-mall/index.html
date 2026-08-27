@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Albany Antique Mall — Redesign Concept</title>
+  <meta name="description" content="Concept redesign for Albany Antique Mall — 20,000 square feet and 100+ booths in historic downtown Albany, Oregon.">
+  <style>
+    :root {
+      --sage: #5d7352;
+      --brass: #b8963e;
+      --ink: #2f2a24;
+      --muted: #6b6358;
+      --cream: #f7f3ea;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, -apple-system, sans-serif; color: var(--ink); background: var(--cream); line-height: 1.55; }
+    a { color: var(--sage); text-decoration: none; }
+    header { background: #fff; border-bottom: 1px solid #e4dccb; position: sticky; top: 0; z-index: 50; }
+    .nav { max-width: 1100px; margin: 0 auto; padding: 0.95rem 1.5rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+    .logo { font-weight: 800; font-size: 1.15rem; letter-spacing: -0.02em; }
+    .logo span { color: var(--sage); }
+    .nav-links { display: flex; gap: 1.4rem; font-size: 0.92rem; flex-wrap: wrap; }
+    .nav-links a { color: var(--muted); font-weight: 600; }
+    .nav-links a:hover { color: var(--sage); }
+    .hero {
+      background: linear-gradient(135deg, #3a4234 0%, #5d7352 100%);
+      color: #fff; padding: 5.5rem 1.5rem 4.5rem; text-align: center;
+    }
+    .hero-inner { max-width: 700px; margin: 0 auto; }
+    .badge { display: inline-block; background: var(--brass); color: #2f2a24; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.35rem 0.9rem; border-radius: 4px; margin-bottom: 1.2rem; }
+    .hero h1 { font-size: clamp(2.1rem, 5.2vw, 3.1rem); font-weight: 800; line-height: 1.12; margin-bottom: 0.8rem; letter-spacing: -0.03em; }
+    .hero p { font-size: 1.12rem; opacity: 0.92; max-width: 540px; margin: 0 auto 1.8rem; }
+    .btn { display: inline-block; padding: 0.8rem 1.55rem; border-radius: 6px; font-weight: 700; font-size: 0.94rem; transition: 0.15s; }
+    .btn-primary { background: var(--brass); color: #2f2a24; }
+    .btn-primary:hover { background: #c9a64a; text-decoration: none; }
+    .btn-ghost { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.5); margin-left: 0.5rem; }
+    .btn-ghost:hover { background: rgba(255,255,255,0.1); text-decoration: none; }
+    section { max-width: 1100px; margin: 0 auto; padding: 4rem 1.5rem; }
+    .section-label { font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--sage); margin-bottom: 0.5rem; }
+    h2 { font-size: clamp(1.65rem, 3.4vw, 2.15rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 1rem; }
+    .lead { font-size: 1.08rem; color: var(--muted); max-width: 560px; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; margin-top: 2.2rem; }
+    @media (max-width: 700px) { .cards { grid-template-columns: 1fr; } }
+    .card { background: #fff; border: 1px solid #e4dccb; border-radius: 12px; padding: 1.6rem; }
+    .card h3 { font-size: 1.08rem; margin-bottom: 0.4rem; }
+    .card p { font-size: 0.93rem; color: var(--muted); }
+    .when { font-size: 0.82rem; font-weight: 700; color: var(--sage); margin-bottom: 0.45rem; }
+    .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; }
+    @media (max-width: 640px) { .info-grid { grid-template-columns: 1fr; } }
+    .info-box { background: #fff; border: 1px solid #e4dccb; border-radius: 12px; padding: 1.75rem; }
+    .info-box h3 { font-size: 1.1rem; margin-bottom: 1rem; }
+    .hours-list { list-style: none; }
+    .hours-list li { display: flex; justify-content: space-between; gap: 1rem; padding: 0.4rem 0; border-bottom: 1px solid #efe8d8; font-size: 0.95rem; }
+    .hours-list li:last-child { border-bottom: none; }
+    .hours-list .day { color: var(--muted); }
+    .hours-list .time { font-weight: 700; }
+    .cta-band { background: var(--sage); color: #fff; text-align: center; padding: 3.5rem 1.5rem; }
+    .cta-band h2 { color: #fff; margin-bottom: 0.6rem; }
+    .cta-band p { opacity: 0.92; margin-bottom: 1.5rem; }
+    .cta-band .btn { margin: 0.3rem; }
+    .cta-band .btn-primary { background: #fff; color: var(--sage); }
+    footer { background: #2f2a24; color: rgba(255,255,255,0.65); padding: 2.5rem 1.5rem; text-align: center; font-size: 0.88rem; }
+    footer strong { color: #fff; display: block; margin-bottom: 0.5rem; }
+    .disclaimer { max-width: 620px; margin: 0 auto; line-height: 1.5; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="logo">Albany <span>Antique Mall</span></div>
+      <nav class="nav-links">
+        <a href="#browse">Browse</a>
+        <a href="#events">Events</a>
+        <a href="#visit">Visit</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="badge">Concept Redesign</div>
+      <h1>20,000 square feet of the hunt</h1>
+      <p>Over 100 booths of vintage furniture, jewelry, clothing, art, and collectibles — two floors in historic downtown Albany.</p>
+      <div>
+        <a href="#events" class="btn btn-primary">Event calendar</a>
+        <a href="#visit" class="btn btn-ghost">Hours &amp; location</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="browse">
+    <div class="section-label">What you’ll find</div>
+    <h2>Two floors, 100+ booths</h2>
+    <p class="lead">The mall describes itself as one of Oregon’s larger antique malls — nostalgia, discovery, and something new each visit.</p>
+    <div class="cards">
+      <div class="card">
+        <h3>Furniture &amp; home</h3>
+        <p>Classic pieces, project finds, and displays that change with the dealers.</p>
+      </div>
+      <div class="card">
+        <h3>Jewelry, clothing &amp; art</h3>
+        <p>Vintage fashion, jewelry, and art mixed in among the collectibles.</p>
+      </div>
+      <div class="card">
+        <h3>Quirky collectibles</h3>
+        <p>Retro gems and surprises around every corner — the mall’s own words.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="events" style="background:#fff;border-top:1px solid #e4dccb;border-bottom:1px solid #e4dccb;">
+    <div class="section-label">On the calendar</div>
+    <h2>Events, easy to find on a phone</h2>
+    <p class="lead">Dates below come from albanyantiquemall.com/events-1. Confirm on the official site before you plan around one.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="when">Sat, Sep 12, 2026</div>
+        <h3>Antiques in the Streets &amp; Classic Car Show</h3>
+        <p>Always the first Saturday after Labor Day. Street fair 8am–4pm; mall sidewalk sale 8am–6pm. Proceeds support the Albany Firefighters Community Assistance Fund.</p>
+      </div>
+      <div class="card">
+        <div class="when">Thu, Nov 5, 2026</div>
+        <h3>Holiday Open House</h3>
+        <p>Opening-night Christmas at the mall — winter wonderland setup and door prizes for the first 150 guests through the door.</p>
+      </div>
+      <div class="card">
+        <div class="when">Annual favorites</div>
+        <h3>Ladies Night Out &amp; sidewalk sales</h3>
+        <p>Ladies Night Out, Customer Appreciation, and Crazy Sidewalk Sales rotate through the year. Check the official events page for the next date.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="visit">
+    <div class="section-label">Plan your visit</div>
+    <h2>Hours &amp; location</h2>
+    <div class="info-grid">
+      <div class="info-box">
+        <h3>Hours</h3>
+        <ul class="hours-list">
+          <li><span class="day">Regular hours</span><span class="time">Call for hours</span></li>
+        </ul>
+        <p style="margin-top:1rem;font-size:0.9rem;color:var(--muted);">Regular weekly hours were not listed on the official site at the time of this concept. Please call before you visit.</p>
+      </div>
+      <div class="info-box">
+        <h3>Location</h3>
+        <p style="margin-bottom:0.75rem;"><strong>145 SW 2nd Ave</strong><br>Albany, OR 97321</p>
+        <p style="color:var(--muted);font-size:0.95rem;">Phone: <a href="tel:+15417040109">(541) 704-0109</a><br>Historic downtown Albany</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band">
+    <h2>Come hunt.</h2>
+    <p>Call for hours, or see the official site for the next event.</p>
+    <a href="tel:+15417040109" class="btn btn-primary">(541) 704-0109</a>
+    <a href="https://albanyantiquemall.com/" class="btn btn-ghost" target="_blank" rel="noopener">Official site</a>
+  </div>
+
+  <footer>
+    <div class="disclaimer">
+      <strong>Design Concept Mockup</strong>
+      This is not the official website of Albany Antique Mall and is not affiliated with the business. Created solely to demonstrate what a refreshed digital presence could look like.
+    </div>
+  </footer>
+</body>
+</html>
