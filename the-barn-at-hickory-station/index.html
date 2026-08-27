@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Barn at Hickory Station — Redesign Concept</title>
+  <meta name="description" content="Concept redesign for The Barn at Hickory Station in Albany, Oregon — taproom, food cart hub, and private events.">
+  <style>
+    :root {
+      --barn: #8b3a2a;
+      --amber: #d4a017;
+      --forest: #2d4a3e;
+      --ink: #1f1a14;
+      --muted: #6b5e4e;
+      --cream: #f5efe4;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, -apple-system, sans-serif; color: var(--ink); background: var(--cream); line-height: 1.6; }
+    a { color: var(--barn); text-decoration: none; }
+    header { background: var(--forest); color: #fff; position: sticky; top: 0; z-index: 50; }
+    .nav { max-width: 1100px; margin: 0 auto; padding: 0.95rem 1.5rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+    .logo { font-weight: 800; font-size: 1.12rem; letter-spacing: -0.01em; }
+    .logo span { color: var(--amber); }
+    .nav-links { display: flex; gap: 1.25rem; font-size: 0.92rem; flex-wrap: wrap; }
+    .nav-links a { color: rgba(255,255,255,0.9); font-weight: 600; }
+    .nav-links a:hover { color: var(--amber); }
+    .hero {
+      background: linear-gradient(rgba(45,74,62,0.78), rgba(31,26,20,0.86)),
+                  url('https://images.unsplash.com/photo-1436076863939-06870fe779c2?w=1400&q=80') center/cover;
+      color: #fff; padding: 5.5rem 1.5rem 4.5rem; text-align: center;
+    }
+    .hero-inner { max-width: 700px; margin: 0 auto; }
+    .badge { display: inline-block; background: var(--amber); color: var(--ink); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.35rem 0.9rem; border-radius: 4px; margin-bottom: 1.2rem; }
+    .hero h1 { font-size: clamp(2.05rem, 5.2vw, 3rem); font-weight: 800; line-height: 1.12; margin-bottom: 0.8rem; letter-spacing: -0.02em; }
+    .hero p { font-size: 1.12rem; opacity: 0.92; max-width: 540px; margin: 0 auto 1.8rem; }
+    .btn { display: inline-block; padding: 0.8rem 1.55rem; border-radius: 6px; font-weight: 700; font-size: 0.94rem; transition: 0.15s; }
+    .btn-primary { background: var(--amber); color: var(--ink); }
+    .btn-primary:hover { background: #e0b02a; text-decoration: none; }
+    .btn-ghost { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.55); margin-left: 0.5rem; }
+    .btn-ghost:hover { background: rgba(255,255,255,0.1); text-decoration: none; }
+    section { max-width: 1100px; margin: 0 auto; padding: 4rem 1.5rem; }
+    .section-label { font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--barn); margin-bottom: 0.5rem; }
+    h2 { font-size: clamp(1.65rem, 3.4vw, 2.15rem); font-weight: 800; margin-bottom: 1rem; letter-spacing: -0.02em; }
+    .lead { font-size: 1.08rem; color: var(--muted); max-width: 580px; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; margin-top: 2.2rem; }
+    @media (max-width: 700px) { .cards { grid-template-columns: 1fr; } }
+    .card { background: #fff; border: 1px solid #e6dcc8; border-radius: 12px; padding: 1.6rem; }
+    .card h3 { font-size: 1.08rem; margin-bottom: 0.4rem; }
+    .card p { font-size: 0.93rem; color: var(--muted); }
+    .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; }
+    @media (max-width: 640px) { .info-grid { grid-template-columns: 1fr; } }
+    .info-box { background: #fff; border: 1px solid #e6dcc8; border-radius: 12px; padding: 1.75rem; }
+    .info-box h3 { font-size: 1.1rem; margin-bottom: 1rem; }
+    .hours-list { list-style: none; }
+    .hours-list li { display: flex; justify-content: space-between; gap: 1rem; padding: 0.4rem 0; border-bottom: 1px solid #f0e8d8; font-size: 0.95rem; }
+    .hours-list li:last-child { border-bottom: none; }
+    .hours-list .day { color: var(--muted); }
+    .hours-list .time { font-weight: 700; }
+    .cta-band { background: var(--barn); color: #fff; text-align: center; padding: 3.5rem 1.5rem; }
+    .cta-band h2 { color: #fff; margin-bottom: 0.6rem; }
+    .cta-band p { opacity: 0.92; margin-bottom: 1.5rem; }
+    .cta-band .btn { margin: 0.3rem; }
+    footer { background: #1a1612; color: rgba(255,255,255,0.65); padding: 2.5rem 1.5rem; text-align: center; font-size: 0.88rem; }
+    footer strong { color: #fff; display: block; margin-bottom: 0.5rem; }
+    .disclaimer { max-width: 620px; margin: 0 auto; line-height: 1.5; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="logo">The Barn <span>at Hickory Station</span></div>
+      <nav class="nav-links">
+        <a href="#taproom">Taproom</a>
+        <a href="#carts">Food carts</a>
+        <a href="#events">Events</a>
+        <a href="#visit">Hours</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="badge">Concept Redesign</div>
+      <h1>Taproom, food carts, and a place to gather</h1>
+      <p>A family-owned food cart hub in Albany — 42 beers on tap, a covered heated patio, and carts serving food from around the world. Kid and family friendly.</p>
+      <div>
+        <a href="#taproom" class="btn btn-primary">Taproom</a>
+        <a href="#visit" class="btn btn-ghost">Hours &amp; location</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="taproom">
+    <div class="section-label">Who we are</div>
+    <h2>Beer, wine, cider — and a patio of carts</h2>
+    <p class="lead">Positioning pulled from thebarnhs.com. The Barn Taproom has beer, wine, cider, and non-alcoholic drinks, with a food-cart hub outside.</p>
+    <div class="cards">
+      <div class="card">
+        <h3>Drinks</h3>
+        <p>Over 42 beers on tap, plus wine, cider, and kombucha rotating weekly. Non-alcoholic options are part of the mix.</p>
+      </div>
+      <div class="card">
+        <h3>The patio</h3>
+        <p>A large, covered outdoor patio with heated seating. The site lists 14 food carts offering all varieties of food.</p>
+      </div>
+      <div class="card">
+        <h3>Family owned</h3>
+        <p>Family owned and operated in Hickory Station. Nominated for Willamette Valley Best of 2019–2024, per their About page. Kid and family friendly.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="carts" style="background:#fff;border-top:1px solid #e6dcc8;border-bottom:1px solid #e6dcc8;">
+    <div class="section-label">Check out our food carts</div>
+    <h2>A large variety of food</h2>
+    <p class="lead">Carts named on thebarnhs.com/food-carts. Lineups can change — this is what the official site listed.</p>
+    <div class="cards">
+      <div class="card">
+        <h3>Around the world</h3>
+        <p>Los Vecinos (Venezuelan), Majahua Mexican Food, Rivas Dulce Vida (Salvadorian), Big Sisters Thai Kitchen, Ohana Kitchen (Hawaiian), Apollo’s Gyros, Dreaming of Sushi, and Kento Hibachi.</p>
+      </div>
+      <div class="card">
+        <h3>BBQ, crab, and American</h3>
+        <p>High on the Hog (BBQ &amp; boba), Kracked Crab, Cluckin’ Dog, The Chicken Shack, and Home Grown Oregon Foods (gluten-free, meal prep).</p>
+      </div>
+      <div class="card">
+        <h3>Sweets</h3>
+        <p>Don Bigote for sweets and more. The homepage also flags desserts as their own stop: sweet and tasty treats.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="events">
+    <div class="section-label">We host private events</div>
+    <h2>A room for up to 60</h2>
+    <p class="lead">The Barn loves hosting private party events. Their private party room fits up to 60 people — rehearsal dinners, bridal and baby showers, family reunions, and business meetings, per thebarnhs.com.</p>
+    <div class="cards">
+      <div class="card">
+        <h3>Outdoor music</h3>
+        <p>Outdoor music and other fun events are listed as part of what they do. Call for what’s on the calendar.</p>
+      </div>
+      <div class="card">
+        <h3>The space</h3>
+        <p>Tables, heated outdoor seating, and music — theirs or yours on request. Vegetarian, allergy-friendly, and non-alcoholic options are noted for private events.</p>
+      </div>
+      <div class="card">
+        <h3>Book it</h3>
+        <p>Use the contact form on the official site, or call the taproom. This concept does not invent an events email.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="visit" style="background:#fff;border-top:1px solid #e6dcc8;">
+    <div class="section-label">Plan your visit</div>
+    <h2>Hours &amp; location</h2>
+    <div class="info-grid">
+      <div class="info-box">
+        <h3>Hours</h3>
+        <ul class="hours-list">
+          <li><span class="day">All days</span><span class="time">Call for hours</span></li>
+        </ul>
+        <p style="margin-top:1rem;font-size:0.9rem;color:var(--muted);">thebarnhs.com publishes hours, but the homepage/footer and the contact page do not match (including whether Monday is open). Please call to confirm before you visit.</p>
+      </div>
+      <div class="info-box">
+        <h3>Location</h3>
+        <p style="margin-bottom:0.75rem;"><strong>640 NW Hickory St NW</strong><br>Albany, OR 97321</p>
+        <p style="color:var(--muted);font-size:0.95rem;">Phone: <a href="tel:+15416662974">(541) 666-2974</a><br>Hickory Station, Albany</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band">
+    <h2>Come out to The Barn</h2>
+    <p>Call for hours, a table on the patio, or a private-event hold.</p>
+    <a href="tel:+15416662974" class="btn btn-primary">(541) 666-2974</a>
+    <a href="http://thebarnhs.com/" class="btn btn-ghost" target="_blank" rel="noopener">Official site</a>
+  </div>
+
+  <footer>
+    <div class="disclaimer">
+      <strong>Design Concept Mockup</strong>
+      This is not the official website of The Barn at Hickory Station and is not affiliated with the business. Created solely to demonstrate what a refreshed digital presence could look like.
+    </div>
+  </footer>
+</body>
+</html>
