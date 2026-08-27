@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The Squeaky Cork — Redesign Concept</title>
   <meta name="description" content="Concept redesign for The Squeaky Cork, a Scottish restaurant and whiskey bar in downtown Albany, Oregon.">
+  <link rel="stylesheet" href="../assets/mockup.css">
   <style>
     :root {
       --amber: #c4782a;
@@ -13,61 +14,31 @@
       --cream: #f4ece0;
       --ink: #1c140e;
       --muted: #6a5848;
+      --accent: #c4782a;
+      --link: #b87333;
+      --header-bg: #2a1c14;
+      --header-fg: #fff;
+      --header-border: none;
+      --nav-link: rgba(255,255,255,0.88);
+      --nav-hover: #c4782a;
+      --logo-accent: #c4782a;
+      --hero-bg: linear-gradient(#2a1c14, #1c140e);
+      --badge-bg: #c4782a;
+      --badge-fg: #2a1c14;
+      --btn-bg: #c4782a;
+      --btn-fg: #2a1c14;
+      --btn-hover: #d48938;
+      --section-accent: #b87333;
+      --card-border: #e6d9c8;
+      --cta-bg: #2a1c14;
+      --cta-btn-bg: #c4782a;
+      --cta-btn-fg: #2a1c14;
+      --footer-bg: #140e0a;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: Georgia, "Times New Roman", serif; color: var(--ink); background: var(--cream); line-height: 1.6; }
-    a { color: var(--copper); text-decoration: none; }
-    header { background: var(--whisky); color: #fff; position: sticky; top: 0; z-index: 50; }
-    .nav { max-width: 1100px; margin: 0 auto; padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; font-family: system-ui, sans-serif; }
-    .logo { font-weight: 800; font-size: 1.2rem; letter-spacing: 0.01em; }
-    .logo span { color: var(--amber); }
-    .nav-links { display: flex; gap: 1.4rem; font-size: 0.92rem; flex-wrap: wrap; }
-    .nav-links a { color: rgba(255,255,255,0.88); font-weight: 600; }
-    .nav-links a:hover { color: var(--amber); }
-    .hero {
-      background: linear-gradient(rgba(42,28,20,0.84), rgba(42,28,20,0.9)),
-                  url('https://images.unsplash.com/photo-1527169402691-feff5539e1e3?w=1400&q=80') center/cover;
-      color: #fff; padding: 5.5rem 1.5rem 4.5rem; text-align: center;
-    }
-    .hero-inner { max-width: 680px; margin: 0 auto; }
-    .badge { display: inline-block; background: var(--amber); color: var(--whisky); font-size: 0.72rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.35rem 0.9rem; border-radius: 4px; margin-bottom: 1.2rem; font-family: system-ui, sans-serif; }
-    .hero h1 { font-size: clamp(2.1rem, 5.5vw, 3.2rem); font-weight: 700; line-height: 1.12; margin-bottom: 0.8rem; }
-    .hero p { font-size: 1.15rem; opacity: 0.92; max-width: 520px; margin: 0 auto 1.8rem; }
-    .btn { display: inline-block; padding: 0.8rem 1.55rem; border-radius: 6px; font-weight: 700; font-size: 0.94rem; transition: 0.15s; font-family: system-ui, sans-serif; }
-    .btn-primary { background: var(--amber); color: var(--whisky); }
-    .btn-primary:hover { background: #d48938; text-decoration: none; }
-    .btn-ghost { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.5); margin-left: 0.5rem; }
-    .btn-ghost:hover { background: rgba(255,255,255,0.1); text-decoration: none; }
-    section { max-width: 1100px; margin: 0 auto; padding: 4rem 1.5rem; }
-    .section-label { font-size: 0.78rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--copper); margin-bottom: 0.5rem; font-family: system-ui, sans-serif; }
-    h2 { font-size: clamp(1.7rem, 3.5vw, 2.2rem); font-weight: 700; margin-bottom: 1rem; }
-    .lead { font-size: 1.1rem; color: var(--muted); max-width: 540px; }
-    .library { background: #fff; border-top: 1px solid #e6d9c8; border-bottom: 1px solid #e6d9c8; }
-    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.2rem; }
-    @media (max-width: 700px) { .cards { grid-template-columns: 1fr; } }
-    .card { background: #fff; border: 1px solid #e6d9c8; border-radius: 12px; padding: 1.6rem; }
-    .card h3 { font-size: 1.1rem; margin-bottom: 0.4rem; }
-    .card p { font-size: 0.94rem; color: var(--muted); }
-    .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; }
-    @media (max-width: 640px) { .info-grid { grid-template-columns: 1fr; } }
-    .info-box { background: #fff; border: 1px solid #e6d9c8; border-radius: 12px; padding: 1.75rem; }
-    .info-box h3 { font-size: 1.1rem; margin-bottom: 1rem; }
-    .hours-list { list-style: none; }
-    .hours-list li { display: flex; justify-content: space-between; gap: 1rem; padding: 0.4rem 0; border-bottom: 1px solid #f0e6d8; font-size: 0.95rem; font-family: system-ui, sans-serif; }
-    .hours-list li:last-child { border-bottom: none; }
-    .hours-list .day { color: var(--muted); }
-    .hours-list .time { font-weight: 700; }
-    .cta-band { background: var(--whisky); color: #fff; text-align: center; padding: 3.5rem 1.5rem; }
-    .cta-band h2 { color: #fff; margin-bottom: 0.6rem; }
-    .cta-band p { opacity: 0.9; margin-bottom: 1.5rem; }
-    .cta-band .btn { margin: 0.3rem; }
-    footer { background: #140e0a; color: rgba(255,255,255,0.65); padding: 2.5rem 1.5rem; text-align: center; font-size: 0.88rem; font-family: system-ui, sans-serif; }
-    footer strong { color: #fff; display: block; margin-bottom: 0.5rem; }
-    .disclaimer { max-width: 600px; margin: 0 auto; line-height: 1.5; }
   </style>
 </head>
-<body>
-  <header>
+<body class="serif">
+<header>
     <div class="nav">
       <div class="logo">The Squeaky <span>Cork</span></div>
       <nav class="nav-links">

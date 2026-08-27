@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The Depot Restaurant — Redesign Concept</title>
   <meta name="description" content="Concept redesign for The Depot Restaurant in Albany, Oregon — classic fish & chips since 1976.">
+  <link rel="stylesheet" href="../assets/mockup.css">
   <style>
     :root {
       --navy: #1a2f4a;
@@ -12,69 +13,30 @@
       --gold: #c9a227;
       --ink: #1c1c1c;
       --muted: #5a5a5a;
+      --accent: #c9a227;
+      --link: #1a2f4a;
+      --header-bg: #1a2f4a;
+      --header-fg: #fff;
+      --header-border: none;
+      --nav-link: rgba(255,255,255,0.9);
+      --nav-hover: #c9a227;
+      --logo-accent: #c9a227;
+      --hero-bg: linear-gradient(#1a2f4a, #152538);
+      --badge-bg: #c9a227;
+      --badge-fg: #1a2f4a;
+      --btn-bg: #c9a227;
+      --btn-fg: #1a2f4a;
+      --btn-hover: #d4b12e;
+      --section-accent: #c9a227;
+      --card-border: #e8e4de;
+      --story-card-bg: #1a2f4a;
+      --story-card-accent: #c9a227;
+      --cta-bg: #1a2f4a;
+      --cta-btn-bg: #c9a227;
+      --cta-btn-fg: #1a2f4a;
+      --footer-bg: #111;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: system-ui, -apple-system, sans-serif; color: var(--ink); background: var(--cream); line-height: 1.55; }
-    a { color: var(--navy); text-decoration: none; }
-    header { background: var(--navy); color: #fff; position: sticky; top: 0; z-index: 50; }
-    .nav { max-width: 1100px; margin: 0 auto; padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; }
-    .logo { font-weight: 800; font-size: 1.35rem; letter-spacing: -0.02em; }
-    .logo span { color: var(--gold); }
-    .nav-links { display: flex; gap: 1.5rem; font-size: 0.95rem; }
-    .nav-links a { color: rgba(255,255,255,0.9); font-weight: 500; }
-    .nav-links a:hover { color: var(--gold); }
-
-    .hero {
-      background: linear-gradient(rgba(26,47,74,0.82), rgba(26,47,74,0.88)),
-                  url('https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1400&q=80') center/cover;
-      color: #fff; padding: 5.5rem 1.5rem 4.5rem; text-align: center;
-    }
-    .hero-inner { max-width: 680px; margin: 0 auto; }
-    .badge { display: inline-block; background: var(--gold); color: var(--navy); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 0.35rem 0.9rem; border-radius: 4px; margin-bottom: 1.2rem; }
-    .hero h1 { font-size: clamp(2.2rem, 5.5vw, 3.3rem); font-weight: 800; line-height: 1.1; margin-bottom: 0.8rem; letter-spacing: -0.03em; }
-    .hero p { font-size: 1.15rem; opacity: 0.92; max-width: 480px; margin: 0 auto 1.8rem; }
-    .btn { display: inline-block; padding: 0.8rem 1.6rem; border-radius: 6px; font-weight: 700; font-size: 0.95rem; transition: 0.15s; }
-    .btn-primary { background: var(--gold); color: var(--navy); }
-    .btn-primary:hover { background: #d4b12e; text-decoration: none; }
-    .btn-ghost { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.5); margin-left: 0.6rem; }
-    .btn-ghost:hover { background: rgba(255,255,255,0.1); text-decoration: none; }
-
-    section { max-width: 1100px; margin: 0 auto; padding: 4rem 1.5rem; }
-    .section-label { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
-    h2 { font-size: clamp(1.7rem, 3.5vw, 2.2rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 1rem; }
-    .lead { font-size: 1.1rem; color: var(--muted); max-width: 540px; }
-
-    .story { background: #fff; border-top: 1px solid #e8e4de; border-bottom: 1px solid #e8e4de; }
-    .story-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; align-items: start; }
-    @media (max-width: 768px) { .story-grid { grid-template-columns: 1fr; } }
-    .story-card { background: var(--navy); color: #fff; border-radius: 12px; padding: 2rem; }
-    .story-card h3 { color: var(--gold); font-size: 1.1rem; margin-bottom: 0.6rem; }
-
-    .highlights { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.5rem; }
-    @media (max-width: 700px) { .highlights { grid-template-columns: 1fr; } }
-    .highlight { background: #fff; border: 1px solid #e8e4de; border-radius: 10px; padding: 1.5rem; text-align: center; }
-    .highlight .emoji { font-size: 1.8rem; margin-bottom: 0.5rem; }
-    .highlight h3 { font-size: 1.05rem; margin-bottom: 0.35rem; }
-    .highlight p { font-size: 0.9rem; color: var(--muted); }
-
-    .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; }
-    @media (max-width: 640px) { .info-grid { grid-template-columns: 1fr; } }
-    .info-box { background: #fff; border: 1px solid #e8e4de; border-radius: 12px; padding: 1.75rem; }
-    .info-box h3 { font-size: 1.1rem; margin-bottom: 1rem; }
-    .hours-list { list-style: none; }
-    .hours-list li { display: flex; justify-content: space-between; padding: 0.4rem 0; border-bottom: 1px solid #f0ece6; font-size: 0.95rem; }
-    .hours-list li:last-child { border-bottom: none; }
-    .hours-list .day { color: var(--muted); }
-    .hours-list .time { font-weight: 700; }
-
-    .cta-band { background: var(--navy); color: #fff; text-align: center; padding: 3.5rem 1.5rem; }
-    .cta-band h2 { color: #fff; margin-bottom: 0.6rem; }
-    .cta-band p { opacity: 0.9; margin-bottom: 1.5rem; }
-    .cta-band .btn-primary { background: var(--gold); color: var(--navy); }
-
-    footer { background: #111; color: rgba(255,255,255,0.65); padding: 2.5rem 1.5rem; text-align: center; font-size: 0.88rem; }
-    footer strong { color: #fff; display: block; margin-bottom: 0.5rem; }
-    .disclaimer { max-width: 600px; margin: 0 auto; line-height: 1.5; }
+    .logo { font-size: 1.35rem; }
   </style>
 </head>
 <body>

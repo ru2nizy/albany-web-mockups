@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Albany Antique Mall — Redesign Concept</title>
   <meta name="description" content="Concept redesign for Albany Antique Mall — 20,000 square feet and 100+ booths in historic downtown Albany, Oregon.">
+  <link rel="stylesheet" href="../assets/mockup.css">
   <style>
     :root {
       --sage: #5d7352;
@@ -12,57 +13,27 @@
       --ink: #2f2a24;
       --muted: #6b6358;
       --cream: #f7f3ea;
+      --accent: #b8963e;
+      --link: #5d7352;
+      --header-bg: #fff;
+      --header-fg: #2f2a24;
+      --header-border: 1px solid #e4dccb;
+      --nav-link: #6b6358;
+      --nav-hover: #5d7352;
+      --logo-accent: #5d7352;
+      --hero-bg: linear-gradient(135deg, #3a4234 0%, #5d7352 100%);
+      --badge-bg: #b8963e;
+      --badge-fg: #2f2a24;
+      --btn-bg: #b8963e;
+      --btn-fg: #2f2a24;
+      --btn-hover: #c9a64a;
+      --section-accent: #5d7352;
+      --card-border: #e4dccb;
+      --cta-bg: #5d7352;
+      --cta-btn-bg: #fff;
+      --cta-btn-fg: #5d7352;
+      --footer-bg: #2f2a24;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: system-ui, -apple-system, sans-serif; color: var(--ink); background: var(--cream); line-height: 1.55; }
-    a { color: var(--sage); text-decoration: none; }
-    header { background: #fff; border-bottom: 1px solid #e4dccb; position: sticky; top: 0; z-index: 50; }
-    .nav { max-width: 1100px; margin: 0 auto; padding: 0.95rem 1.5rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
-    .logo { font-weight: 800; font-size: 1.15rem; letter-spacing: -0.02em; }
-    .logo span { color: var(--sage); }
-    .nav-links { display: flex; gap: 1.4rem; font-size: 0.92rem; flex-wrap: wrap; }
-    .nav-links a { color: var(--muted); font-weight: 600; }
-    .nav-links a:hover { color: var(--sage); }
-    .hero {
-      background: linear-gradient(135deg, #3a4234 0%, #5d7352 100%);
-      color: #fff; padding: 5.5rem 1.5rem 4.5rem; text-align: center;
-    }
-    .hero-inner { max-width: 700px; margin: 0 auto; }
-    .badge { display: inline-block; background: var(--brass); color: #2f2a24; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.35rem 0.9rem; border-radius: 4px; margin-bottom: 1.2rem; }
-    .hero h1 { font-size: clamp(2.1rem, 5.2vw, 3.1rem); font-weight: 800; line-height: 1.12; margin-bottom: 0.8rem; letter-spacing: -0.03em; }
-    .hero p { font-size: 1.12rem; opacity: 0.92; max-width: 540px; margin: 0 auto 1.8rem; }
-    .btn { display: inline-block; padding: 0.8rem 1.55rem; border-radius: 6px; font-weight: 700; font-size: 0.94rem; transition: 0.15s; }
-    .btn-primary { background: var(--brass); color: #2f2a24; }
-    .btn-primary:hover { background: #c9a64a; text-decoration: none; }
-    .btn-ghost { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.5); margin-left: 0.5rem; }
-    .btn-ghost:hover { background: rgba(255,255,255,0.1); text-decoration: none; }
-    section { max-width: 1100px; margin: 0 auto; padding: 4rem 1.5rem; }
-    .section-label { font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--sage); margin-bottom: 0.5rem; }
-    h2 { font-size: clamp(1.65rem, 3.4vw, 2.15rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 1rem; }
-    .lead { font-size: 1.08rem; color: var(--muted); max-width: 560px; }
-    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; margin-top: 2.2rem; }
-    @media (max-width: 700px) { .cards { grid-template-columns: 1fr; } }
-    .card { background: #fff; border: 1px solid #e4dccb; border-radius: 12px; padding: 1.6rem; }
-    .card h3 { font-size: 1.08rem; margin-bottom: 0.4rem; }
-    .card p { font-size: 0.93rem; color: var(--muted); }
-    .when { font-size: 0.82rem; font-weight: 700; color: var(--sage); margin-bottom: 0.45rem; }
-    .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; }
-    @media (max-width: 640px) { .info-grid { grid-template-columns: 1fr; } }
-    .info-box { background: #fff; border: 1px solid #e4dccb; border-radius: 12px; padding: 1.75rem; }
-    .info-box h3 { font-size: 1.1rem; margin-bottom: 1rem; }
-    .hours-list { list-style: none; }
-    .hours-list li { display: flex; justify-content: space-between; gap: 1rem; padding: 0.4rem 0; border-bottom: 1px solid #efe8d8; font-size: 0.95rem; }
-    .hours-list li:last-child { border-bottom: none; }
-    .hours-list .day { color: var(--muted); }
-    .hours-list .time { font-weight: 700; }
-    .cta-band { background: var(--sage); color: #fff; text-align: center; padding: 3.5rem 1.5rem; }
-    .cta-band h2 { color: #fff; margin-bottom: 0.6rem; }
-    .cta-band p { opacity: 0.92; margin-bottom: 1.5rem; }
-    .cta-band .btn { margin: 0.3rem; }
-    .cta-band .btn-primary { background: #fff; color: var(--sage); }
-    footer { background: #2f2a24; color: rgba(255,255,255,0.65); padding: 2.5rem 1.5rem; text-align: center; font-size: 0.88rem; }
-    footer strong { color: #fff; display: block; margin-bottom: 0.5rem; }
-    .disclaimer { max-width: 620px; margin: 0 auto; line-height: 1.5; }
   </style>
 </head>
 <body>

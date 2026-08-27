@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The Barn at Hickory Station — Redesign Concept</title>
   <meta name="description" content="Concept redesign for The Barn at Hickory Station in Albany, Oregon — taproom, food cart hub, and private events.">
+  <link rel="stylesheet" href="../assets/mockup.css">
   <style>
     :root {
       --barn: #8b3a2a;
@@ -13,56 +14,28 @@
       --ink: #1f1a14;
       --muted: #6b5e4e;
       --cream: #f5efe4;
+      --accent: #d4a017;
+      --link: #8b3a2a;
+      --header-bg: #2d4a3e;
+      --header-fg: #fff;
+      --header-border: none;
+      --nav-link: rgba(255,255,255,0.9);
+      --nav-hover: #d4a017;
+      --logo-accent: #d4a017;
+      --hero-bg: linear-gradient(#2d4a3e, #1f1a14);
+      --badge-bg: #d4a017;
+      --badge-fg: #1f1a14;
+      --btn-bg: #d4a017;
+      --btn-fg: #1f1a14;
+      --btn-hover: #e0b02a;
+      --section-accent: #8b3a2a;
+      --card-border: #e6dcc8;
+      --cta-bg: #8b3a2a;
+      --cta-btn-bg: #d4a017;
+      --cta-btn-fg: #1f1a14;
+      --footer-bg: #1a1612;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: system-ui, -apple-system, sans-serif; color: var(--ink); background: var(--cream); line-height: 1.6; }
-    a { color: var(--barn); text-decoration: none; }
-    header { background: var(--forest); color: #fff; position: sticky; top: 0; z-index: 50; }
-    .nav { max-width: 1100px; margin: 0 auto; padding: 0.95rem 1.5rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
-    .logo { font-weight: 800; font-size: 1.12rem; letter-spacing: -0.01em; }
-    .logo span { color: var(--amber); }
-    .nav-links { display: flex; gap: 1.25rem; font-size: 0.92rem; flex-wrap: wrap; }
-    .nav-links a { color: rgba(255,255,255,0.9); font-weight: 600; }
-    .nav-links a:hover { color: var(--amber); }
-    .hero {
-      background: linear-gradient(rgba(45,74,62,0.78), rgba(31,26,20,0.86)),
-                  url('https://images.unsplash.com/photo-1436076863939-06870fe779c2?w=1400&q=80') center/cover;
-      color: #fff; padding: 5.5rem 1.5rem 4.5rem; text-align: center;
-    }
-    .hero-inner { max-width: 700px; margin: 0 auto; }
-    .badge { display: inline-block; background: var(--amber); color: var(--ink); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.35rem 0.9rem; border-radius: 4px; margin-bottom: 1.2rem; }
-    .hero h1 { font-size: clamp(2.05rem, 5.2vw, 3rem); font-weight: 800; line-height: 1.12; margin-bottom: 0.8rem; letter-spacing: -0.02em; }
-    .hero p { font-size: 1.12rem; opacity: 0.92; max-width: 540px; margin: 0 auto 1.8rem; }
-    .btn { display: inline-block; padding: 0.8rem 1.55rem; border-radius: 6px; font-weight: 700; font-size: 0.94rem; transition: 0.15s; }
-    .btn-primary { background: var(--amber); color: var(--ink); }
-    .btn-primary:hover { background: #e0b02a; text-decoration: none; }
-    .btn-ghost { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.55); margin-left: 0.5rem; }
-    .btn-ghost:hover { background: rgba(255,255,255,0.1); text-decoration: none; }
-    section { max-width: 1100px; margin: 0 auto; padding: 4rem 1.5rem; }
-    .section-label { font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--barn); margin-bottom: 0.5rem; }
-    h2 { font-size: clamp(1.65rem, 3.4vw, 2.15rem); font-weight: 800; margin-bottom: 1rem; letter-spacing: -0.02em; }
-    .lead { font-size: 1.08rem; color: var(--muted); max-width: 580px; }
-    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; margin-top: 2.2rem; }
-    @media (max-width: 700px) { .cards { grid-template-columns: 1fr; } }
-    .card { background: #fff; border: 1px solid #e6dcc8; border-radius: 12px; padding: 1.6rem; }
-    .card h3 { font-size: 1.08rem; margin-bottom: 0.4rem; }
-    .card p { font-size: 0.93rem; color: var(--muted); }
-    .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; }
-    @media (max-width: 640px) { .info-grid { grid-template-columns: 1fr; } }
-    .info-box { background: #fff; border: 1px solid #e6dcc8; border-radius: 12px; padding: 1.75rem; }
-    .info-box h3 { font-size: 1.1rem; margin-bottom: 1rem; }
-    .hours-list { list-style: none; }
-    .hours-list li { display: flex; justify-content: space-between; gap: 1rem; padding: 0.4rem 0; border-bottom: 1px solid #f0e8d8; font-size: 0.95rem; }
-    .hours-list li:last-child { border-bottom: none; }
-    .hours-list .day { color: var(--muted); }
-    .hours-list .time { font-weight: 700; }
-    .cta-band { background: var(--barn); color: #fff; text-align: center; padding: 3.5rem 1.5rem; }
-    .cta-band h2 { color: #fff; margin-bottom: 0.6rem; }
-    .cta-band p { opacity: 0.92; margin-bottom: 1.5rem; }
-    .cta-band .btn { margin: 0.3rem; }
-    footer { background: #1a1612; color: rgba(255,255,255,0.65); padding: 2.5rem 1.5rem; text-align: center; font-size: 0.88rem; }
-    footer strong { color: #fff; display: block; margin-bottom: 0.5rem; }
-    .disclaimer { max-width: 620px; margin: 0 auto; line-height: 1.5; }
+    .logo { font-size: 1.12rem; }
   </style>
 </head>
 <body>
