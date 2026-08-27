@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vito's Trattoria — Redesign Concept</title>
+  <meta name="description" content="Concept redesign for Vito's Trattoria in Albany, Oregon — Italian family table since February 2024.">
+  <style>
+    :root {
+      --terracotta: #c45c26;
+      --olive: #5a6b3a;
+      --wine: #7a2e3a;
+      --cream: #faf6f0;
+      --ink: #241c16;
+      --muted: #6b5c50;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, -apple-system, sans-serif; color: var(--ink); background: var(--cream); line-height: 1.55; }
+    a { color: var(--terracotta); text-decoration: none; }
+    header { background: var(--wine); color: #fff; position: sticky; top: 0; z-index: 50; }
+    .nav { max-width: 1100px; margin: 0 auto; padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+    .logo { font-weight: 800; font-size: 1.25rem; letter-spacing: -0.02em; }
+    .logo span { color: #f0c9a0; }
+    .nav-links { display: flex; gap: 1.4rem; font-size: 0.95rem; flex-wrap: wrap; }
+    .nav-links a { color: rgba(255,255,255,0.9); font-weight: 500; }
+    .nav-links a:hover { color: #f0c9a0; }
+    .hero {
+      background: linear-gradient(rgba(122,46,58,0.82), rgba(36,28,22,0.88)),
+                  url('https://images.unsplash.com/photo-1551183053-bf91fc4f8dfe?w=1400&q=80') center/cover;
+      color: #fff; padding: 5.5rem 1.5rem 4.5rem; text-align: center;
+    }
+    .hero-inner { max-width: 680px; margin: 0 auto; }
+    .badge { display: inline-block; background: var(--terracotta); color: #fff; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 0.35rem 0.9rem; border-radius: 4px; margin-bottom: 1.2rem; }
+    .hero h1 { font-size: clamp(2.1rem, 5.5vw, 3.2rem); font-weight: 800; line-height: 1.1; margin-bottom: 0.8rem; letter-spacing: -0.03em; }
+    .hero p { font-size: 1.15rem; opacity: 0.92; max-width: 500px; margin: 0 auto 1.8rem; }
+    .btn { display: inline-block; padding: 0.8rem 1.6rem; border-radius: 6px; font-weight: 700; font-size: 0.95rem; transition: 0.15s; }
+    .btn-primary { background: var(--terracotta); color: #fff; }
+    .btn-primary:hover { background: #a84c1f; text-decoration: none; }
+    .btn-ghost { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.5); margin-left: 0.5rem; }
+    .btn-ghost:hover { background: rgba(255,255,255,0.1); text-decoration: none; }
+    section { max-width: 1100px; margin: 0 auto; padding: 4rem 1.5rem; }
+    .section-label { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--terracotta); margin-bottom: 0.5rem; }
+    h2 { font-size: clamp(1.7rem, 3.5vw, 2.2rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 1rem; }
+    .lead { font-size: 1.1rem; color: var(--muted); max-width: 540px; }
+    .story { background: #fff; border-top: 1px solid #ece4d8; border-bottom: 1px solid #ece4d8; }
+    .story-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; align-items: start; }
+    @media (max-width: 768px) { .story-grid { grid-template-columns: 1fr; } }
+    .story-card { background: var(--olive); color: #fff; border-radius: 12px; padding: 2rem; }
+    .story-card h3 { color: #e8d9a8; font-size: 1.1rem; margin-bottom: 0.6rem; }
+    .highlights { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.5rem; }
+    @media (max-width: 700px) { .highlights { grid-template-columns: 1fr; } }
+    .highlight { background: #fff; border: 1px solid #ece4d8; border-radius: 10px; padding: 1.5rem; }
+    .highlight h3 { font-size: 1.05rem; margin-bottom: 0.35rem; }
+    .highlight p { font-size: 0.9rem; color: var(--muted); }
+    .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; }
+    @media (max-width: 640px) { .info-grid { grid-template-columns: 1fr; } }
+    .info-box { background: #fff; border: 1px solid #ece4d8; border-radius: 12px; padding: 1.75rem; }
+    .info-box h3 { font-size: 1.1rem; margin-bottom: 1rem; }
+    .hours-list { list-style: none; }
+    .hours-list li { display: flex; justify-content: space-between; gap: 1rem; padding: 0.4rem 0; border-bottom: 1px solid #f0ece6; font-size: 0.95rem; }
+    .hours-list li:last-child { border-bottom: none; }
+    .hours-list .day { color: var(--muted); }
+    .hours-list .time { font-weight: 700; }
+    .cta-band { background: var(--wine); color: #fff; text-align: center; padding: 3.5rem 1.5rem; }
+    .cta-band h2 { color: #fff; margin-bottom: 0.6rem; }
+    .cta-band p { opacity: 0.9; margin-bottom: 1.5rem; }
+    .cta-band .btn { margin: 0.3rem; }
+    footer { background: #1a1410; color: rgba(255,255,255,0.65); padding: 2.5rem 1.5rem; text-align: center; font-size: 0.88rem; }
+    footer strong { color: #fff; display: block; margin-bottom: 0.5rem; }
+    .disclaimer { max-width: 600px; margin: 0 auto; line-height: 1.5; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="logo">Vito's <span>Trattoria</span></div>
+      <nav class="nav-links">
+        <a href="#story">Our Story</a>
+        <a href="#menu">Menu</a>
+        <a href="#visit">Visit</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="badge">Concept Redesign</div>
+      <h1>An Italian family table in downtown Albany</h1>
+      <p>Open since February 2024 in the former Gamberetti's space — pasta, cocktails, and a reason to book ahead.</p>
+      <div>
+        <a href="#menu" class="btn btn-primary">See the menu</a>
+        <a href="#visit" class="btn btn-ghost">Hours &amp; location</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="story" id="story">
+    <div class="story-grid">
+      <div>
+        <div class="section-label">Since February 2024</div>
+        <h2>Formerly Gamberetti's, still a neighborhood table</h2>
+        <p class="lead">Vito's Trattoria serves traditional Italian recipes with a family-friendly atmosphere in historic downtown Albany. Indoor dining, outdoor seating, and a lively bar make it easy to turn dinner into a night out.</p>
+      </div>
+      <div class="story-card">
+        <h3>Owner-led hospitality</h3>
+        <p>Alex Loomis, who managed Gamberetti's for five years, purchased the restaurant and opened Vito's to bring an authentic Italian dining experience to Albany. Catering and private parties are part of the mix — birthdays, reunions, and office gatherings.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="menu">
+    <div class="section-label">From the kitchen</div>
+    <h2>Menu highlights</h2>
+    <p class="lead">Dishes named on the official site. Ask the restaurant for current prices and the full menu.</p>
+    <div class="highlights">
+      <div class="highlight">
+        <h3>Pasta &amp; ravioli</h3>
+        <p>Fettuccini Alfredo and other traditional plates, plus ravioli and gnocchi. Fresh pasta and sauces are the house pitch.</p>
+      </div>
+      <div class="highlight">
+        <h3>Sandwiches &amp; comfort</h3>
+        <p>The Steak Sandwich and Soprano are called out as easy, satisfying picks for dine-in or to-go.</p>
+      </div>
+      <div class="highlight">
+        <h3>Cocktails &amp; tiramisu</h3>
+        <p>A full bar and classic desserts, including tiramisu. Book ahead for groups and special occasions.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="visit" style="background:#fff;border-top:1px solid #eee;">
+    <div class="section-label">Come see us</div>
+    <h2>Hours &amp; location</h2>
+    <div class="info-grid">
+      <div class="info-box">
+        <h3>Hours</h3>
+        <ul class="hours-list">
+          <li><span class="day">Regular hours</span><span class="time">Call for hours</span></li>
+        </ul>
+        <p style="margin-top:1rem;font-size:0.9rem;color:var(--muted);">Hours were not listed on the official site at the time of this concept. Please call to confirm before you visit.</p>
+      </div>
+      <div class="info-box">
+        <h3>Location</h3>
+        <p style="margin-bottom:0.75rem;"><strong>211 W 1st Ave</strong><br>Albany, OR 97321</p>
+        <p style="color:var(--muted);font-size:0.95rem;">Phone: <a href="tel:+15414972181">(541) 497-2181</a><br>Historic downtown Albany</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band">
+    <h2>Ready to book a table?</h2>
+    <p>Call ahead for hours, parties, or a weeknight plate of pasta.</p>
+    <a href="tel:+15414972181" class="btn btn-primary">(541) 497-2181</a>
+    <a href="http://vitostrattoria.com/" class="btn btn-ghost" target="_blank" rel="noopener">Official site</a>
+    <a href="mailto:alex@vitostrattoria.com" class="btn btn-ghost">Email</a>
+  </div>
+
+  <footer>
+    <div class="disclaimer">
+      <strong>Design Concept Mockup</strong>
+      This is not the official website of Vito's Trattoria and is not affiliated with the business. Created solely to demonstrate what a refreshed digital presence could look like.
+    </div>
+  </footer>
+</body>
+</html>
