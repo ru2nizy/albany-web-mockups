@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sybaris Bistro — Redesign Concept</title>
+  <meta name="description" content="Concept redesign for Sybaris Bistro in Albany, Oregon — an eclectic Pacific Northwest bistro with a monthly farm-to-table menu.">
+  <style>
+    :root {
+      --wine: #6b1d2a;
+      --gold: #c9a15b;
+      --ink: #1f1714;
+      --muted: #6b5c50;
+      --cream: #f7f1e8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "Georgia", "Times New Roman", serif; color: var(--ink); background: var(--cream); line-height: 1.6; }
+    a { color: var(--wine); text-decoration: none; }
+    header { background: var(--wine); color: #fff; position: sticky; top: 0; z-index: 50; }
+    .nav { max-width: 1100px; margin: 0 auto; padding: 0.95rem 1.5rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; font-family: system-ui, sans-serif; }
+    .logo { font-weight: 700; font-size: 1.15rem; letter-spacing: 0.01em; }
+    .logo span { color: var(--gold); }
+    .nav-links { display: flex; gap: 1.4rem; font-size: 0.92rem; flex-wrap: wrap; }
+    .nav-links a { color: rgba(255,255,255,0.9); font-weight: 600; }
+    .nav-links a:hover { color: var(--gold); }
+    .hero {
+      background: linear-gradient(rgba(107,29,42,0.78), rgba(31,23,20,0.86)),
+                  url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1400&q=80') center/cover;
+      color: #fff; padding: 5.5rem 1.5rem 4.5rem; text-align: center;
+    }
+    .hero-inner { max-width: 700px; margin: 0 auto; }
+    .badge { display: inline-block; background: var(--gold); color: var(--ink); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.35rem 0.9rem; border-radius: 4px; margin-bottom: 1.2rem; font-family: system-ui, sans-serif; }
+    .hero h1 { font-size: clamp(2.05rem, 5.2vw, 3rem); font-weight: 700; line-height: 1.15; margin-bottom: 0.8rem; }
+    .hero p { font-size: 1.12rem; opacity: 0.92; max-width: 540px; margin: 0 auto 1.8rem; }
+    .btn { display: inline-block; padding: 0.8rem 1.55rem; border-radius: 6px; font-weight: 700; font-size: 0.94rem; transition: 0.15s; font-family: system-ui, sans-serif; }
+    .btn-primary { background: var(--gold); color: var(--ink); }
+    .btn-primary:hover { background: #d4b06e; text-decoration: none; }
+    .btn-ghost { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.55); margin-left: 0.5rem; }
+    .btn-ghost:hover { background: rgba(255,255,255,0.1); text-decoration: none; }
+    section { max-width: 1100px; margin: 0 auto; padding: 4rem 1.5rem; }
+    .section-label { font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--wine); margin-bottom: 0.5rem; font-family: system-ui, sans-serif; }
+    h2 { font-size: clamp(1.65rem, 3.4vw, 2.15rem); font-weight: 700; margin-bottom: 1rem; }
+    .lead { font-size: 1.08rem; color: var(--muted); max-width: 580px; }
+    .story { background: #fff; border-top: 1px solid #ece4d8; border-bottom: 1px solid #ece4d8; }
+    .story-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; align-items: start; }
+    @media (max-width: 768px) { .story-grid { grid-template-columns: 1fr; } }
+    .story-card { background: var(--wine); color: #fff; border-radius: 12px; padding: 2rem; }
+    .story-card h3 { color: var(--gold); font-size: 1.1rem; margin-bottom: 0.6rem; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; margin-top: 2.2rem; }
+    @media (max-width: 700px) { .cards { grid-template-columns: 1fr; } }
+    .card { background: #fff; border: 1px solid #ece4d8; border-radius: 12px; padding: 1.6rem; }
+    .card h3 { font-size: 1.08rem; margin-bottom: 0.4rem; }
+    .card p { font-size: 0.93rem; color: var(--muted); }
+    .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; }
+    @media (max-width: 640px) { .info-grid { grid-template-columns: 1fr; } }
+    .info-box { background: #fff; border: 1px solid #ece4d8; border-radius: 12px; padding: 1.75rem; }
+    .info-box h3 { font-size: 1.1rem; margin-bottom: 1rem; font-family: system-ui, sans-serif; }
+    .hours-list { list-style: none; font-family: system-ui, sans-serif; }
+    .hours-list li { display: flex; justify-content: space-between; gap: 1rem; padding: 0.4rem 0; border-bottom: 1px solid #f3ebe6; font-size: 0.95rem; }
+    .hours-list li:last-child { border-bottom: none; }
+    .hours-list .day { color: var(--muted); }
+    .hours-list .time { font-weight: 700; }
+    .cta-band { background: var(--wine); color: #fff; text-align: center; padding: 3.5rem 1.5rem; }
+    .cta-band h2 { color: #fff; margin-bottom: 0.6rem; }
+    .cta-band p { opacity: 0.92; margin-bottom: 1.5rem; }
+    .cta-band .btn { margin: 0.3rem; }
+    footer { background: #1a1210; color: rgba(255,255,255,0.65); padding: 2.5rem 1.5rem; text-align: center; font-size: 0.88rem; font-family: system-ui, sans-serif; }
+    footer strong { color: #fff; display: block; margin-bottom: 0.5rem; }
+    .disclaimer { max-width: 620px; margin: 0 auto; line-height: 1.5; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="logo">Sybaris <span>Bistro</span></div>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#menu">Menu</a>
+        <a href="#visit">Hours</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="badge">Concept Redesign</div>
+      <h1>An eclectic Pacific Northwest bistro</h1>
+      <p>Chef Matt Bennett’s kitchen brings Oregon farms, ranches, and Willamette Valley wines to the table — a fresh menu every month, from scratch.</p>
+      <div>
+        <a href="#menu" class="btn btn-primary">See the menu</a>
+        <a href="#visit" class="btn btn-ghost">Hours &amp; location</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="story" id="about">
+    <div class="story-grid">
+      <div>
+        <div class="section-label">Since October 9, 2001</div>
+        <h2>The best of Oregon, made in-house</h2>
+        <p class="lead">Sybaris is dedicated to bringing the best of Oregon to your table, served with equal parts eclecticism, classical preparation, and innovation. Owners Janel and Matt Bennett mark 25 years in 2026. The one employee with them since opening day is Jesse Brown.</p>
+      </div>
+      <div class="story-card">
+        <h3>From the chef</h3>
+        <p>Everything is made from scratch unless a commercial product is better than what they can make. They bake bread daily. The pastry-chef background means desserts — including ice cream — are made in-house. Matt was invited to the James Beard House to cook a meal representative of the Northwest, and later returned for a Willamette Valley Native Tribute with The Confederated Tribes of Grand Ronde.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="menu">
+    <div class="section-label">Menu + reservations</div>
+    <h2>A menu that changes with the crops</h2>
+    <p class="lead">Highlights from sybarisbistro.com/menu — not a frozen price list. The kitchen works directly with small farms, ranches, and Willamette Valley wineries.</p>
+    <div class="cards">
+      <div class="card">
+        <h3>Dinner</h3>
+        <p>Eclectic cuisine with flavors from around the world. A new menu each month. Current plates live on the official dinner menu — this concept does not invent dishes or prices.</p>
+      </div>
+      <div class="card">
+        <h3>Dessert &amp; gluten-free</h3>
+        <p>Separate dessert and gluten-free menus are published on the official site. Desserts use French chocolate, additive-free cream, and pure Hawaiian cane sugar, per the About page.</p>
+      </div>
+      <div class="card">
+        <h3>Wine &amp; bar</h3>
+        <p>An extensive Northwest-centered wine list and a full bar. Enjoy a cocktail with dinner in downtown Albany.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="visit" style="background:#fff;border-top:1px solid #ece4d8;">
+    <div class="section-label">Plan your visit</div>
+    <h2>Hours &amp; location</h2>
+    <div class="info-grid">
+      <div class="info-box">
+        <h3>Reservations</h3>
+        <ul class="hours-list">
+          <li><span class="day">Tuesday – Saturday</span><span class="time">Reservations available</span></li>
+          <li><span class="day">Last table seated</span><span class="time">7:45 pm</span></li>
+          <li><span class="day">Sunday – Monday</span><span class="time">Call for hours</span></li>
+        </ul>
+        <p style="margin-top:1rem;font-size:0.9rem;color:var(--muted);">Reservation days and last-seating time as published on sybarisbistro.com/menu. Exact open-clock times were not listed on the official site — call to confirm. Reservations are strongly recommended.</p>
+      </div>
+      <div class="info-box">
+        <h3>Location</h3>
+        <p style="margin-bottom:0.75rem;"><strong>133 Southeast 5th Avenue</strong><br>Albany, OR 97321</p>
+        <p style="color:var(--muted);font-size:0.95rem;">Phone: <a href="tel:+15419288157">(541) 928-8157</a><br>Address as published on sybarisbistro.com (historic Oregon Electric Railway station). Gift certificates can be purchased on the official site or picked up during regular business hours.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band">
+    <h2>Book a table</h2>
+    <p>Reservations are strongly recommended. Call ahead — last table is seated at 7:45 pm.</p>
+    <a href="tel:+15419288157" class="btn btn-primary">(541) 928-8157</a>
+    <a href="https://www.sybarisbistro.com/" class="btn btn-ghost" target="_blank" rel="noopener">Official site</a>
+  </div>
+
+  <footer>
+    <div class="disclaimer">
+      <strong>Design Concept Mockup</strong>
+      This is not the official website of Sybaris Bistro and is not affiliated with the business. Created solely to demonstrate what a refreshed digital presence could look like.
+    </div>
+  </footer>
+</body>
+</html>
