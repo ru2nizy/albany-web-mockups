@@ -39,10 +39,9 @@ PAGES = {
     },
 }
 
-HREF = re.compile(r'href="(#[^"]+)"')
+HREF = re.compile(r'<a\s+href="(#[^"]+)"[^>]*>(.*?)</a>', re.I | re.S)
 ID = re.compile(r'\bid="([^"]+)"')
 MAILTO = re.compile(r'href="mailto:[^"]+"', re.I)
-IMG = re.compile(r"<img\b", re.I)
 VIEWPORT = 'name="viewport"'
 OFFICIAL = re.compile(
     r'href="([^"]+)"[^>]*target="_blank"[^>]*rel="noopener"[^>]*>\s*Official site',
@@ -52,11 +51,37 @@ OFFICIAL_ALT = re.compile(
     r'target="_blank"[^>]*rel="noopener"[^>]*href="([^"]+)"[^>]*>\s*Official site',
     re.I | re.S,
 )
+# Visible CTA/nav label must land on a matching section id.
+LABEL_TARGET = (
+    ("kitchen", "kitchen"),
+    ("catering", "parties"),
+    ("parties", "parties"),
+    ("about", "about"),
+    ("menu", "menu"),
+    ("history", "history"),
+    ("dining", "dining"),
+    ("reservations", "reservations"),
+    ("hours", "visit"),
+    ("location", "visit"),
+)
+
+
+def _expected_target(label: str) -> str | None:
+    low = re.sub(r"<[^>]+>", "", label).lower()
+    low = low.replace("&amp;", "&")
+    for needle, target in LABEL_TARGET:
+        if needle in low:
+            return target
+    return None
 
 
 def main() -> int:
     fails: list[str] = []
     index = (ROOT / "index.html").read_text(encoding="utf-8")
+    css = (ROOT / "assets/mockup.css").read_text(encoding="utf-8")
+    if "header {" not in css or "position: sticky" not in css:
+        fails.append("shared CSS lost sticky header")
+
     for slug in PAGES:
         if f'href="./{slug}/"' not in index:
             fails.append(f"index.html is missing card for {slug}")
@@ -72,8 +97,6 @@ def main() -> int:
             fails.append(f"{rel} missing meta viewport")
         if "<img" in text.lower():
             fails.append(f"{rel} contains an <img> tag")
-        if "position: sticky" not in (ROOT / "assets/mockup.css").read_text():
-            fails.append("shared CSS lost sticky header")
         if spec["tel"] not in text:
             fails.append(f"{rel} missing {spec['tel']}")
         if spec["display"] not in text:
@@ -97,14 +120,21 @@ def main() -> int:
             if spec["mailto"] not in text:
                 fails.append(f"{rel} missing {spec['mailto']}")
         ids = set(ID.findall(text))
-        for href in HREF.findall(text):
+        for href, label in HREF.findall(text):
             target = href[1:]
             if target not in ids:
                 fails.append(f"{rel} nav/CTA {href} has no matching id")
-        if "Monday" in text and slug == "vault-244":
-            # Allowed only as "Monday hours were not listed"
+                continue
+            expected = _expected_target(label)
+            if expected and target != expected:
+                fails.append(
+                    f"{rel} CTA {label.strip()!r} points to #{target}, expected #{expected}"
+                )
+        if slug == "vault-244" and "Monday" in text:
             if "Monday hours were not listed" not in text:
                 fails.append(f"{rel} invents Monday hours")
+        if slug == "loafers-station" and "kids menu" in text.lower():
+            fails.append(f"{rel} uses review-derived kids-menu copy")
 
     if fails:
         print("leftover quality failed:")
