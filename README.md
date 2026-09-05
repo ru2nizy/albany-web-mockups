@@ -30,6 +30,10 @@ Published from the hub at [`index.html`](./index.html):
 | The Natty Dresser | Menswear | [`the-natty-dresser/`](./the-natty-dresser/) |
 | Sybaris Bistro | Farm-to-table bistro | [`sybaris-bistro/`](./sybaris-bistro/) |
 | The Barn at Hickory Station | Taproom / venue | [`the-barn-at-hickory-station/`](./the-barn-at-hickory-station/) |
+| Brasa Restaurant | PNW Forest & Mediterranean fusion | [`brasa-restaurant/`](./brasa-restaurant/) |
+| Sweet Red Bistro | Wine bistro | [`sweet-red-bistro/`](./sweet-red-bistro/) |
+| Vault 244 | Bistro / lounge | [`vault-244/`](./vault-244/) |
+| Loafers Station | Restaurant / bar | [`loafers-station/`](./loafers-station/) |
 
 ---
 

@@ -16,3 +16,5 @@ jobs:
           python-version: "3.12"
       - name: Check mockup pages and disclaimers
         run: python scripts/check_pages.py
+      - name: Check leftover mockup quality bar
+        run: python scripts/check_leftover_quality.py
