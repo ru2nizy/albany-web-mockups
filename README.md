@@ -54,6 +54,10 @@ Heroes use CSS gradients (the same overlays the old photo backgrounds sat under)
 
 `python scripts/check_pages.py` (and `.github/workflows/pages-health.yml`) refuses a missing mockup, missing disclaimer, remote image/font host, or a page that skipped the shared stylesheet.
 
+Heroes are full-bleed. A local dot grid and accent glow (Magic UI’s dot pattern, with a 21st.dev-style glow) sit behind the existing headline, and the primary button uses a CSS shimmer. The shimmer stays off when the visitor prefers reduced motion. Studio package pricing and a testimonial row are on [`sections.html`](./sections.html). Those prices are copied from `SERVICES.md`. The quotes are labeled placeholders. Business pages do not gain invented prices or reviews. The testimonial row does not animate until it nears the viewport.
+
+GitHub Pages publishes the `main` branch from `/`. A pull request does not change https://ru2nizy.github.io/albany-web-mockups/ until it is merged.
+
 ---
 
 ## How to view
