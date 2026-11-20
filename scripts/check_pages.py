@@ -104,7 +104,17 @@ def main() -> int:
         blocked = _blocked_hosts_in(css_text)
         if blocked:
             fails.append(f"{SHARED_CSS} references blocked hosts: {', '.join(blocked)}")
-        for needle in (".nav {", ".hero {", ".info-grid {", ".cta-band {", ".disclaimer {"):
+        for needle in (
+            ".nav {",
+            ".hero {",
+            ".hero::before",
+            ".info-grid {",
+            ".cta-band {",
+            ".disclaimer {",
+            ".pricing-grid {",
+            ".quote-card {",
+            ".marquee.is-in",
+        ):
             if needle not in css_text:
                 fails.append(f"{SHARED_CSS} is missing expected layout rule {needle!r}")
 
@@ -142,6 +152,44 @@ def main() -> int:
         blocked = _blocked_hosts_in(text)
         if blocked:
             fails.append(f"{rel} references blocked remote assets: {', '.join(blocked)}")
+        if 'id="hero"' not in text:
+            fails.append(f"{rel} is missing id=\"hero\"")
+        if "data-placeholder" in text or "$2,800" in text:
+            fails.append(f"{rel} adds placeholder testimonials or studio pricing")
+        if slug == "brick-and-mortar-cafe" and "price-card" not in text:
+            fails.append(f"{rel} is missing the pricing-card treatment")
+
+    sections = ROOT / "sections.html"
+    if not sections.is_file():
+        fails.append("missing sections.html")
+    else:
+        section_text = sections.read_text(encoding="utf-8", errors="replace")
+        section_size = sections.stat().st_size
+        if section_size > MAX_MOCKUP_HTML_BYTES:
+            fails.append(f"sections.html is {section_size} bytes (budget {MAX_MOCKUP_HTML_BYTES})")
+        if not _has_disclaimer(section_text):
+            fails.append("sections.html is missing disclaimer language")
+        if 'href="assets/mockup.css"' not in section_text:
+            fails.append("sections.html does not link assets/mockup.css")
+        if REMOTE_CSS_URL.search(section_text):
+            fails.append("sections.html has a remote CSS url()")
+        blocked = _blocked_hosts_in(section_text)
+        if blocked:
+            fails.append(f"sections.html references blocked remote assets: {', '.join(blocked)}")
+        for needle in ('id="hero"', 'id="pricing"', 'id="testimonials"', "data-lazy", "IntersectionObserver", "data-placeholder"):
+            if needle not in section_text:
+                fails.append(f"sections.html is missing {needle}")
+        for needle in (
+            "$0 (lead magnet)",
+            "$2,800 – $3,400",
+            "$3,500 – $4,500",
+            "$75 – $150 / month",
+            "Free redesign mockup (HTML)",
+        ):
+            if needle not in section_text:
+                fails.append(f"sections.html changed published package copy: {needle}")
+    if 'href="./sections.html"' not in index_text:
+        fails.append("index.html does not link ./sections.html")
 
     if fails:
         print("pages-health failed:")
@@ -149,7 +197,7 @@ def main() -> int:
             print(f"  - {line}")
         return 1
     print(
-        f"ok: {len(KNOWN_MOCKUPS)} mockups + index + {SHARED_CSS} "
+        f"ok: {len(KNOWN_MOCKUPS)} mockups + sections.html + index + {SHARED_CSS} "
         f"(no remote heroes/fonts)"
     )
     return 0
